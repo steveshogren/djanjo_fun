@@ -6,6 +6,7 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
 #    (r'^polls/', include('polls.urls')),
-    (r'^tictactoe/', include('tictactoe.urls')),
+    (r'^colors/', 'jetbrainschemes.views.index'),
+#    (r'^tictactoe/', include('tictactoe.urls')),
     (r'^admin/', include(admin.site.urls)),
 )
