@@ -9,4 +9,8 @@ def index(request):
 #    return render_to_response("colors/index.html", {'xml': xml})
     read = ReadXmlToPhpColors()
     xml = read.parse()
-    return render_to_response('colors/index.html', {'php_keyword': xml})
+    return render_to_response('colors/index.html', {
+        'php_keyword': xml['keyword_fore'],
+        'text_back': xml['text_back'],
+        'text_fore': xml['text_fore'],
+    })

@@ -1,27 +1,21 @@
-#from django.db import models
-#
-#class Scheme(models.Model):
-##    def __unicode__(self):
-##        return self.question
-##
-##    def was_published_today(self):
-##        return self.pub_date.date() == datetime.date.today()
-#
-#
-#    question = models.CharField(max_length=200)
-#    pub_date = models.DateTimeField('date published')
-
 from xml.dom import minidom
 
 class ReadXmlToPhpColors():
     def parse(self):
-        xmldoc = minidom.parse('jetbrainschemes/test.xml')
-        option = xmldoc.getElementsByTagNameNS('option')
-        for node in xmldoc.getElementsByTagName("option"):
-            if node.hasAttribute == 'PHP_KEYWORD':
-                test = node
-#        option = xmldoc.getElementsByTagName('attributes')
-#        foreground = option.getElementsByTagNameNS('option', 'FOREGROUND')
-        return test
+        colors = {'text_back': 'ffffff', 'text_fore': 'ffffff', 'keyword_fore': 'ffffff'}
+        colors['keyword_fore'] = self.Lookup("PHP_KEYWORD", "FOREGROUND")
+        colors['text_back'] = self.Lookup("TEXT", "BACKGROUND")
+        colors['text_fore'] = self.Lookup("TEXT", "FOREGROUND")
+        return colors
 
-#    scheme/attributes/ option = PHP_KEYWORD/value/option = FOREGROUND
+    def Lookup(self, firstName, secondName):
+        xmldoc = minidom.parse('jetbrainschemes/test.xml')
+        for node in xmldoc.getElementsByTagName("option"):
+            if node.getAttribute("name") == firstName:
+                children = node.childNodes[1]
+                for node in children.getElementsByTagName("option"):
+                    if node.getAttribute("name") == secondName:
+                        return node.getAttribute("value")
+
+test = ReadXmlToPhpColors()
+print test.parse()

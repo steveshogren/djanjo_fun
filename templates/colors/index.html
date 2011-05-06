@@ -6,7 +6,11 @@
     <title>JetBrains Color Schemes</title>
     <style TYPE="text/css">
         .keyword {
-            color: red
+            color: #00{{ php_keyword }};
+        }
+        p {
+            background: #{{ text_back }};
+            color: #{{ text_fore }};
         }
     </style>
 </head>
@@ -24,17 +28,16 @@ HEREDOC_ID;<br />
     * Description by <a href="mailto:">alex</a><br />
     * @return SomeType<br />
     */<br />
-   function doSmth($abc, $def) {<br />
+   <span class="keyword">function</span> doSmth($abc, $def) {<br />
       $v = Helper::convert($abc . "\n {$def}");<br />
-      $q = new Query( $this->invent(abs(0x80)) );<br />
-      return array($v => $q->result);<br />
+      $q = <span class="keyword">new</span> Query( $this->invent(abs(0x80)) );<br />
+      <span class="keyword">return</span> array($v => $q->result);<br />
    }<br />
 }<br />
 <br />
-include (dirname(__FILE__) . "inc.php");<br />
+<span class="keyword">include</span> (dirname(__FILE__) . "inc.php");<br />
 `rm -r`;<br />
 \<br />
 </p>
-{{ php_keyword }}
 </body>
 </html>
