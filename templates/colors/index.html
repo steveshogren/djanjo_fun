@@ -5,37 +5,35 @@
 <head>
     <title>JetBrains Color Schemes</title>
     <style TYPE="text/css">
-        .keyword {
-            color: #00{{ php_keyword }};
+        body {
+            font-family:courier,monospace;
         }
-        p {
-            background: #{{ text_back }};
-            color: #{{ text_fore }};
-        }
+        {{ colors }}
     </style>
 </head>
 <body>
 
-<p>
-$heredoc = <<< HEREDOC_ID<br />
-some $contents<br />
+<p class="TEXT">
+<span class="PHP_VAR">$heredoc</span>
+    <span class="PHP_OPERATION_SIGN">=</span> <<< HEREDOC_ID<br />
+some <span class="PHP_VAR">$contents</span><br />
 HEREDOC_ID;<br />
 <br />
-// Sample comment<br />
+<span class="PHP_COMMENT">// Sample comment</span><br />
 <br />
-<span class="keyword">class</span> SomeClass {<br />
-   /**<br />
-    * Description by <a href="mailto:">alex</a><br />
-    * @return SomeType<br />
-    */<br />
-   <span class="keyword">function</span> doSmth($abc, $def) {<br />
-      $v = Helper::convert($abc . "\n {$def}");<br />
-      $q = <span class="keyword">new</span> Query( $this->invent(abs(0x80)) );<br />
-      <span class="keyword">return</span> array($v => $q->result);<br />
-   }<br />
+<span class="PHP_KEYWORD">class</span> <span class="PHP_IDENTIFIER">SomeClass</span> {<br />
+&nbsp;&nbsp;&nbsp;<span class="PHP_DOC_COMMENT_ID">/**<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;* Description by <a href="mailto:">alex</a><br />
+    &nbsp;&nbsp;&nbsp;&nbsp;* <span class="PHP_DOC_TAG">@return</span> SomeType<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;*/<br /></span>
+   &nbsp;&nbsp;&nbsp;&nbsp;<span class="PHP_KEYWORD">function</span> <span class="PHP_IDENTIFIER">doSmth</span>(<span class="PHP_VAR">$abc</span>, <span class="PHP_VAR">$def</span>) {<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="PHP_VAR">$v</span> <span class="PHP_OPERATION_SIGN">=</span> Helper<span class="PHP_OPERATION_SIGN">::</span>convert(<span class="PHP_VAR">$abc</span> <span class="PHP_OPERATION_SIGN">.</span> "\n {<span class="PHP_VAR">$def</span>}");<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="PHP_VAR">$q</span> <span class="PHP_OPERATION_SIGN">=</span> <span class="PHP_KEYWORD">new</span> Query( <span class="PHP_VAR">$this</span><span class="PHP_OPERATION_SIGN">-></span>invent(abs(0x80)) );<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="PHP_KEYWORD">return</span> array(<span class="PHP_VAR">$v</span> => <span class="PHP_VAR">$q</span><span class="PHP_OPERATION_SIGN">-></span>result);<br />
+&nbsp;&nbsp;&nbsp;&nbsp;}<br />
 }<br />
 <br />
-<span class="keyword">include</span> (dirname(__FILE__) . "inc.php");<br />
+<span class="PHP_KEYWORD">include</span> (dirname(__FILE__) <span class="PHP_OPERATION_SIGN">.</span> <span class="PHP_STRING">"inc.php"</span>);<br />
 `rm -r`;<br />
 \<br />
 </p>
