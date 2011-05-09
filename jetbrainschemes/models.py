@@ -2,8 +2,7 @@ class ReadXmlToPhpColors():
     def parse(self):
         
         xmlOptions = ["PHP_KEYWORD", "TEXT", "PHP_VAR", "PHP_OPERATION_SIGN", "PHP_DOC_COMMENT_ID",
-                     "PHP_DOC_COMMENT_ID", "PHP_DOC_COMMENT_ID", "PHP_DOC_TAG", "PHP_COMMENT", "PHP_COMMENT",
-                     "PHP_IDENTIFIER", "PHP_STRING"]
+                      "PHP_DOC_TAG", "PHP_COMMENT", "PHP_COMMENT", "PHP_IDENTIFIER", "PHP_STRING"]
 
         cssString = ""
         for xmlOption in xmlOptions:
