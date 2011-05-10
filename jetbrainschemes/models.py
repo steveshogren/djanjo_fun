@@ -1,8 +1,9 @@
 class ReadXmlToPhpColors():
     def parse(self):
         
-        xmlOptions = ["PHP_KEYWORD", "TEXT", "PHP_VAR", "PHP_OPERATION_SIGN", "PHP_DOC_COMMENT_ID",
-                      "PHP_DOC_TAG", "PHP_COMMENT", "PHP_COMMENT", "PHP_IDENTIFIER", "PHP_STRING"]
+        xmlOptions = ["PHP_DOC_TAG", "PHP_KEYWORD", "TEXT", "PHP_VAR", "PHP_OPERATION_SIGN", "PHP_DOC_COMMENT_ID",
+                      "PHP_COMMENT", "PHP_COMMENT", "PHP_IDENTIFIER", "PHP_STRING",
+                      "PHP_COMMA", "PHP_BRACKETS", "PHP_HEREDOC_ID", "PHP_NUMBER", "PHP_SEMICOLON"]
 
         cssString = ""
         for xmlOption in xmlOptions:
@@ -13,18 +14,18 @@ class ReadXmlToPhpColors():
         css = "." + value + " { "
         foreground = self.Lookup(value, "FOREGROUND")
         if foreground:
-            if len (foreground) == 4:
-                foreground = "00" + foreground
-            css += "color: #" + foreground + ";"
+            paddedHexColor = foreground.zfill(6)
+            css += "color: #" + paddedHexColor + ";"
         back = self.Lookup(value, "BACKGROUND")
         if back:
-            css += "background: #" + back + ";"
+            paddedHexColor = back.zfill(6)
+            css += "background: #" + paddedHexColor + ";"
         style = self.ConvertFontStyle(self.Lookup(value, "FONT_TYPE"))
         if style:
             css += "font-style: " + style + ";"
-        decoration = self.ConvertTextDecoration(self.Lookup(value, "EFFECT_TYPE"))
+        decoration = self.ConvertTextDecoration(self.Lookup(value, "EFFECT_TYPE"), self.Lookup(value, "EFFECT_COLOR"))
         if decoration:
-            css += "text-decoration: " + decoration + ";"
+            css += decoration
         css += " } \n"
         return css
 
@@ -39,12 +40,14 @@ class ReadXmlToPhpColors():
 
         return styleText
 
-    def ConvertTextDecoration(self, id):
+    def ConvertTextDecoration(self, id, color):
         styleText = ""
-        if id:
+        if id and color: #TODO make underlines/underwaves all support colors
             id = int(id)
             if id == 1:
-                styleText = "underline"
+                colorString = color.encode('utf8')
+                colorString = colorString.zfill(6)
+                return "border-bottom: 1px solid #" + colorString + ";"
 
         return styleText
 
@@ -59,6 +62,6 @@ class ReadXmlToPhpColors():
                         return node.getAttribute("value")
 
 from xml.dom import minidom
-
-test = ReadXmlToPhpColors()
-print test.parse()
+#
+#test = ReadXmlToPhpColors()
+#print test.parse()
