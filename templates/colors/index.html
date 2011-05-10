@@ -5,37 +5,35 @@
 <head>
     <title>JetBrains Color Schemes</title>
     <style TYPE="text/css">
-        body {
-            font-family:courier,monospace;
-        }
         {{ colors }}
     </style>
 </head>
 <body>
 
-<p class="TEXT">
-<span class="PHP_VAR">$heredoc</span>
-    <span class="PHP_OPERATION_SIGN">=</span> <<< HEREDOC_ID<br />
-some <span class="PHP_VAR">$contents</span><br />
-HEREDOC_ID;<br />
-<br />
-<span class="PHP_COMMENT">// Sample comment</span><br />
-<br />
-<span class="PHP_KEYWORD">class</span> <span class="PHP_IDENTIFIER">SomeClass</span> {<br />
-&nbsp;&nbsp;&nbsp;<span class="PHP_DOC_COMMENT_ID">/**<br />
-    &nbsp;&nbsp;&nbsp;&nbsp;* Description by <a href="mailto:">alex</a><br />
-    &nbsp;&nbsp;&nbsp;&nbsp;* <span class="PHP_DOC_TAG">@return</span> SomeType<br />
-    &nbsp;&nbsp;&nbsp;&nbsp;*/<br /></span>
-   &nbsp;&nbsp;&nbsp;&nbsp;<span class="PHP_KEYWORD">function</span> <span class="PHP_IDENTIFIER">doSmth</span>(<span class="PHP_VAR">$abc</span>, <span class="PHP_VAR">$def</span>) {<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="PHP_VAR">$v</span> <span class="PHP_OPERATION_SIGN">=</span> <span class="PHP_IDENTIFIER">Helper</span><span class="PHP_OPERATION_SIGN">::</span><span class="PHP_IDENTIFIER">convert</span>(<span class="PHP_VAR">$abc</span> <span class="PHP_OPERATION_SIGN">.</span> "\n {<span class="PHP_VAR">$def</span>}");<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="PHP_VAR">$q</span> <span class="PHP_OPERATION_SIGN">=</span> <span class="PHP_KEYWORD">new</span> <span class="PHP_IDENTIFIER">Query</span>( <span class="PHP_VAR">$this</span><span class="PHP_OPERATION_SIGN">-></span><span class="PHP_IDENTIFIER">invent</span>(abs(0x80)) );<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="PHP_KEYWORD">return</span> <span class="PHP_KEYWORD">array</span>(<span class="PHP_VAR">$v</span> => <span class="PHP_VAR">$q</span><span class="PHP_OPERATION_SIGN">-></span><span class="PHP_IDENTIFIER">result</span>);<br />
-&nbsp;&nbsp;&nbsp;&nbsp;}<br />
-}<br />
-<br />
-<span class="PHP_KEYWORD">include</span> (dirname(<span class="PHP_IDENTIFIER">__FILE__</span>) <span class="PHP_OPERATION_SIGN">.</span> <span class="PHP_STRING">"inc.php"</span>);<br />
-`rm -r`;<br />
-\<br />
-</p>
+<code class="TEXT">
+    <pre class="TEXT">
+<span class="PHP_VAR">$heredoc</span> <span class="PHP_OPERATION_SIGN">=</span> <<< HEREDOC_ID
+some <span class="PHP_VAR">$contents</span>
+HEREDOC_ID;
+
+<span class="PHP_COMMENT">// Sample comment</span>
+        
+<span class="PHP_KEYWORD">class</span> <span class="PHP_IDENTIFIER">SomeClass</span> {
+   <span class="PHP_DOC_COMMENT_ID">/**
+    * Description by <a href="mailto:">alex</a>
+    * <span class="PHP_DOC_TAG">@return</span> SomeType
+    */</span>
+    <span class="PHP_KEYWORD">function</span> <span class="PHP_IDENTIFIER">doSmth</span>(<span class="PHP_VAR">$abc</span>, <span class="PHP_VAR">$def</span>) {
+        <span class="PHP_VAR">$v</span> <span class="PHP_OPERATION_SIGN">=</span> <span class="PHP_IDENTIFIER">Helper</span><span class="PHP_OPERATION_SIGN">::</span><span class="PHP_IDENTIFIER">convert</span>(<span class="PHP_VAR">$abc</span> <span class="PHP_OPERATION_SIGN">.</span> "\n {<span class="PHP_VAR">$def</span>}");
+        <span class="PHP_VAR">$q</span> <span class="PHP_OPERATION_SIGN">=</span> <span class="PHP_KEYWORD">new</span> <span class="PHP_IDENTIFIER">Query</span>( <span class="PHP_VAR">$this</span><span class="PHP_OPERATION_SIGN">-></span><span class="PHP_IDENTIFIER">invent</span>(abs(0x80)) );
+        <span class="PHP_KEYWORD">return</span> <span class="PHP_KEYWORD">array</span>(<span class="PHP_VAR">$v</span> => <span class="PHP_VAR">$q</span><span class="PHP_OPERATION_SIGN">-></span><span class="PHP_IDENTIFIER">result</span>);
+    }
+}
+
+<span class="PHP_KEYWORD">include</span> (dirname(<span class="PHP_IDENTIFIER">__FILE__</span>) <span class="PHP_OPERATION_SIGN">.</span> <span class="PHP_STRING">"inc.php"</span>);
+`rm -r`;
+\
+        </pre>
+</code>
 </body>
 </html>
