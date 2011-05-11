@@ -5,11 +5,14 @@
 <head>
     <title>JetBrains Color Schemes</title>
     <style TYPE="text/css">
+        .curly-underline {
+            background: url({{ MEDIA_URL }}underline.gif) bottom repeat-x;
+        }
         {{ colors }}
     </style>
 </head>
 <body>
-
+test
 <code class="TEXT">
     <pre class="TEXT">
 <span class="PHP_VAR">$heredoc</span> <span class="PHP_OPERATION_SIGN">=</span> <span class="PHP_HEREDOC_ID"><<< HEREDOC_ID</span>
@@ -35,5 +38,8 @@ some <span class="PHP_VAR">$contents</span>
 \
 </pre>
 </code>
+
+<span class="curly-underline">test</span>
+
 </body>
 </html>
