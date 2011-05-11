@@ -1,8 +1,9 @@
+import settings
 class ReadXmlToPhpColors():
     def parse(self):
         
         xmlOptions = ["PHP_DOC_TAG", "PHP_KEYWORD", "TEXT", "PHP_VAR", "PHP_OPERATION_SIGN", "PHP_DOC_COMMENT_ID",
-                      "PHP_COMMENT", "PHP_COMMENT", "PHP_IDENTIFIER", "PHP_STRING",
+                      "PHP_COMMENT", "PHP_IDENTIFIER", "PHP_STRING", "PHP_EXEC_COMMAND_ID",
                       "PHP_COMMA", "PHP_BRACKETS", "PHP_HEREDOC_ID", "PHP_NUMBER", "PHP_SEMICOLON"]
 
         cssString = ""
@@ -44,10 +45,26 @@ class ReadXmlToPhpColors():
         styleText = ""
         if id and color: #TODO make underlines/underwaves all support colors
             id = int(id)
-            if id == 1:
+            if id == 0:
+                colorString = color.encode('utf8')
+                colorString = colorString.zfill(6)
+                return "border: 1px solid #" + colorString + ";"
+            elif id == 1:
                 colorString = color.encode('utf8')
                 colorString = colorString.zfill(6)
                 return "border-bottom: 1px solid #" + colorString + ";"
+            elif id == 2:
+                return "background: url(" + settings.MEDIA_URL + "underline.gif) bottom repeat-x;"
+            elif id == 3:
+                return "text-decoration: line-through;" # Not sure how to make this its own color...
+            elif id == 4:
+                colorString = color.encode('utf8')
+                colorString = colorString.zfill(6)
+                return "border-bottom: 2px solid #" + colorString + ";"
+            elif id == 5:
+                colorString = color.encode('utf8')
+                colorString = colorString.zfill(6)
+                return "border-bottom: 1px dotted #" + colorString + ";"
 
         return styleText
 

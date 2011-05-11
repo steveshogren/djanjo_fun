@@ -6,13 +6,12 @@
     <title>JetBrains Color Schemes</title>
     <style TYPE="text/css">
         .curly-underline {
-            background: url({{ MEDIA_URL }}underline.gif) bottom repeat-x;
+            
         }
         {{ colors }}
     </style>
 </head>
 <body>
-test
 <code class="TEXT">
     <pre class="TEXT">
 <span class="PHP_VAR">$heredoc</span> <span class="PHP_OPERATION_SIGN">=</span> <span class="PHP_HEREDOC_ID"><<< HEREDOC_ID</span>
@@ -27,19 +26,16 @@ some <span class="PHP_VAR">$contents</span>
     * <span class="PHP_DOC_TAG">@return</span> SomeType
     */</span>
     <span class="PHP_KEYWORD">function</span> <span class="PHP_IDENTIFIER">doSmth</span><span class="PHP_BRACKETS">(</span><span class="PHP_VAR">$abc</span><span class="PHP_COMMA">,</span> <span class="PHP_VAR">$def</span><span class="PHP_BRACKETS">)</span> <span class="PHP_BRACKETS">{</span>
-        <span class="PHP_VAR">$v</span> <span class="PHP_OPERATION_SIGN">=</span> <span class="PHP_IDENTIFIER">Helper</span><span class="PHP_OPERATION_SIGN">::</span><span class="PHP_IDENTIFIER">convert</span><span class="PHP_BRACKETS">(</span><span class="PHP_VAR">$abc</span> <span class="PHP_OPERATION_SIGN">.</span> "\n <span class="PHP_BRACKETS">{</span><span class="PHP_VAR">$def</span><span class="PHP_BRACKETS">}</span>"<span class="PHP_BRACKETS">)</span><span class="PHP_SEMICOLON">;</span>
+        <span class="PHP_VAR">$v</span> <span class="PHP_OPERATION_SIGN">=</span> <span class="PHP_IDENTIFIER">Helper</span><span class="PHP_OPERATION_SIGN">::</span><span class="PHP_IDENTIFIER">convert</span><span class="PHP_BRACKETS">(</span><span class="PHP_VAR">$abc</span> <span class="PHP_OPERATION_SIGN">.</span> <span class="PHP_STRING">"</span>\n <span class="PHP_BRACKETS">{</span><span class="PHP_VAR">$def</span><span class="PHP_BRACKETS">}</span><span class="PHP_STRING">"</span><span class="PHP_BRACKETS">)</span><span class="PHP_SEMICOLON">;</span>
         <span class="PHP_VAR">$q</span> <span class="PHP_OPERATION_SIGN">=</span> <span class="PHP_KEYWORD">new</span> <span class="PHP_IDENTIFIER">Query</span><span class="PHP_BRACKETS">(</span> <span class="PHP_VAR">$this</span><span class="PHP_OPERATION_SIGN">-></span><span class="PHP_IDENTIFIER">invent</span><span class="PHP_BRACKETS">(</span>abs<span class="PHP_BRACKETS">(</span><span class="PHP_NUMBER">0x80</span><span class="PHP_BRACKETS">)</span><span class="PHP_BRACKETS">)</span> <span class="PHP_BRACKETS">)</span><span class="PHP_SEMICOLON">;</span>
         <span class="PHP_KEYWORD">return</span> <span class="PHP_KEYWORD">array</span><span class="PHP_BRACKETS">(</span><span class="PHP_VAR">$v</span> => <span class="PHP_VAR">$q</span><span class="PHP_OPERATION_SIGN">-></span><span class="PHP_IDENTIFIER">result</span><span class="PHP_BRACKETS">)</span><span class="PHP_SEMICOLON">;</span>
     <span class="PHP_BRACKETS">}</span>
 <span class="PHP_BRACKETS">}</span>
 
 <span class="PHP_KEYWORD">include</span> <span class="PHP_BRACKETS">(</span>dirname<span class="PHP_BRACKETS">(</span><span class="PHP_IDENTIFIER">__FILE__</span><span class="PHP_BRACKETS">)</span> <span class="PHP_OPERATION_SIGN">.</span> <span class="PHP_STRING">"inc.php"</span><span class="PHP_BRACKETS">)</span><span class="PHP_SEMICOLON">;</span>
-`rm -r`<span class="PHP_SEMICOLON">;</span>
+<span class="PHP_EXEC_COMMAND_ID">`rm -r`</span><span class="PHP_SEMICOLON">;</span>
 \
 </pre>
 </code>
-
-<span class="curly-underline">test</span>
-
 </body>
 </html>
