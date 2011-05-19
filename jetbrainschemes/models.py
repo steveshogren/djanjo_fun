@@ -6,10 +6,12 @@ from xml.dom import minidom
 class ReadXmlToPhpColors():
     def parse(self):
         
-        xmlOptions = ["PHP_DOC_TAG", "PHP_KEYWORD", "TEXT", "PHP_VAR", "PHP_OPERATION_SIGN", "PHP_DOC_COMMENT_ID",
-                      "PHP_COMMENT", "PHP_IDENTIFIER", "PHP_STRING", "PHP_EXEC_COMMAND_ID",
-                      "PHP_COMMA", "PHP_BRACKETS", "PHP_HEREDOC_ID", "PHP_NUMBER", "PHP_SEMICOLON", "PHP_PREDEFINED SYMBOL",
-                      "PHP_HEREDOC_CONTENT", "PHP_SCRIPTING_BACKGROUND", "PHP_TAG"]
+#        xmlOptions = ["PHP_DOC_TAG", "PHP_KEYWORD", "TEXT", "PHP_VAR", "PHP_OPERATION_SIGN", "PHP_DOC_COMMENT_ID",
+#                      "PHP_COMMENT", "PHP_IDENTIFIER", "PHP_STRING", "PHP_EXEC_COMMAND_ID",
+#                      "PHP_COMMA", "PHP_BRACKETS", "PHP_HEREDOC_ID", "PHP_NUMBER", "PHP_SEMICOLON", "PHP_PREDEFINED SYMBOL",
+#                      "PHP_HEREDOC_CONTENT", "PHP_SCRIPTING_BACKGROUND", "PHP_TAG", "JS.KEYWORD"]
+
+        xmlOptions = ["JS.KEYWORD", "JS.STRING"]
         xmlOverrides = {"PHP_SCRIPTING_BACKGROUND": "TEXT" }
         cssString = ""
         override = None
@@ -21,6 +23,7 @@ class ReadXmlToPhpColors():
 
     def ConvertToCSS(self, value, override):
         className = value.replace (" ", "_")
+        className = className.replace (".", "_")
         css = "." + className + " { "
         foreground = self.Lookup(value, "FOREGROUND", override)
         if foreground:
@@ -47,6 +50,8 @@ class ReadXmlToPhpColors():
                 styleText = "font-weight: 700"
             if id == 2:
                 styleText = "font-style: italic"
+            if id == 3:
+                styleText = "font-style: italic; font-weight: 700;"
 
         return styleText
 
@@ -115,7 +120,8 @@ class ReadXmlToPhpColors():
         return True
 
     def Lookup(self, firstName, secondName, overrideName=None):
-        xmldoc = minidom.parse('jetbrainschemes/test.xml')
+        xmldoc = minidom.parse('jetbrainschemes/coolblue.xml')
+#        xmldoc = minidom.parse('jetbrainschemes/default3.xml')
 #        xmldoc = minidom.parse('jetbrainschemes/emacs.xml')
         for node in xmldoc.getElementsByTagName("option"):
             if node.getAttribute("name") == firstName:
