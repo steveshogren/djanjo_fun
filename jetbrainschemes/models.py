@@ -3,43 +3,61 @@ import Image
 import os.path
 from xml.dom import minidom
 
+#from django.db import models
+
+#class CssSettings(models.Model):
+#    def __unicode__(self):
+#        return self.file_name
+#
+#    file_name = models.CharField(max_length=250)
+#    css = models.CharField(max_length=10000)
+#    last_updated = models.DateTimeField(auto_now=True)
+
 class ReadXmlToPhpColors():
     def parse(self):
         
-#        xmlOptions = ["PHP_DOC_TAG", "PHP_KEYWORD", "TEXT", "PHP_VAR", "PHP_OPERATION_SIGN", "PHP_DOC_COMMENT_ID",
-#                      "PHP_COMMENT", "PHP_IDENTIFIER", "PHP_STRING", "PHP_EXEC_COMMAND_ID",
-#                      "PHP_COMMA", "PHP_BRACKETS", "PHP_HEREDOC_ID", "PHP_NUMBER", "PHP_SEMICOLON", "PHP_PREDEFINED SYMBOL",
-#                      "PHP_HEREDOC_CONTENT", "PHP_SCRIPTING_BACKGROUND", "PHP_TAG", "JS.KEYWORD"]
+        xmlOptions = ["PHP_DOC_TAG", "PHP_KEYWORD", "TEXT", "PHP_VAR", "PHP_OPERATION_SIGN", "PHP_DOC_COMMENT_ID",
+                      "PHP_COMMENT", "PHP_IDENTIFIER", "PHP_STRING", "PHP_EXEC_COMMAND_ID",
+                      "PHP_COMMA", "PHP_BRACKETS", "PHP_HEREDOC_ID", "PHP_NUMBER", "PHP_SEMICOLON", "PHP_PREDEFINED SYMBOL",
+                      "PHP_HEREDOC_CONTENT", "PHP_SCRIPTING_BACKGROUND", "PHP_TAG", "JS.KEYWORD",
+                      "JS.KEYWORD", "JS.STRING"]
 
-        xmlOptions = ["JS.KEYWORD", "JS.STRING"]
         xmlOverrides = {"PHP_SCRIPTING_BACKGROUND": "TEXT" }
         cssString = ""
         override = None
+        xmldoc = minidom.parse('jetbrainschemes/coolblue.xml')
+#        xmldoc = minidom.parse('jetbrainschemes/default3.xml')
+#        xmldoc = minidom.parse('jetbrainschemes/emacs.xml')
         for xmlOption in xmlOptions:
             if xmlOption in xmlOverrides:
                 override = xmlOverrides[xmlOption]
-            cssString += self.ConvertToCSS(xmlOption, override)
+            cssString += self.ConvertToCSS(xmlOption, override, xmldoc)
         return cssString
 
-    def ConvertToCSS(self, value, override):
+    def ConvertToCSS(self, value, override, xml):
         className = value.replace (" ", "_")
         className = className.replace (".", "_")
         css = "." + className + " { "
-        foreground = self.Lookup(value, "FOREGROUND", override)
+
+        foreground = self.Lookup(xml, value, "FOREGROUND", override)
         if foreground:
             paddedHexColor = foreground.zfill(6)
             css += "color: #" + paddedHexColor + ";"
-        back = self.Lookup(value, "BACKGROUND", override)
+
+        back = self.Lookup(xml, value, "BACKGROUND", override)
         if back:
             paddedHexColor = back.zfill(6)
             css += "background: #" + paddedHexColor + ";"
-        style = self.ConvertFontStyle(self.Lookup(value, "FONT_TYPE"))
+
+        style = self.ConvertFontStyle(self.Lookup(xml, value, "FONT_TYPE"))
         if style:
             css += style + "; "
-        decoration = self.ConvertTextDecoration(self.Lookup(value, "EFFECT_TYPE"), self.Lookup(value, "EFFECT_COLOR"))
+
+        decoration = self.ConvertTextDecoration(self.Lookup(xml, value, "EFFECT_TYPE"), self.Lookup(xml, value, "EFFECT_COLOR"))
         if decoration:
             css += decoration
         css += " } \n"
+
         return css
 
     def ConvertFontStyle(self, id):
@@ -119,10 +137,7 @@ class ReadXmlToPhpColors():
             im.save(os.path.join(settings.MEDIA_ROOT, hex_color + ".png"), "PNG")
         return True
 
-    def Lookup(self, firstName, secondName, overrideName=None):
-        xmldoc = minidom.parse('jetbrainschemes/coolblue.xml')
-#        xmldoc = minidom.parse('jetbrainschemes/default3.xml')
-#        xmldoc = minidom.parse('jetbrainschemes/emacs.xml')
+    def Lookup(self, xmldoc, firstName, secondName, overrideName=None):
         for node in xmldoc.getElementsByTagName("option"):
             if node.getAttribute("name") == firstName:
                 children = node.childNodes[1]
@@ -131,7 +146,7 @@ class ReadXmlToPhpColors():
                         if node.getAttribute("value"):
                             return node.getAttribute("value")
         if overrideName:
-            return self.Lookup(overrideName, secondName)
+            return self.Lookup(xmldoc, overrideName, secondName)
 
 
 #test = ReadXmlToPhpColors()
