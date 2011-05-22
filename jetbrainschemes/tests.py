@@ -32,6 +32,6 @@ class SimpleTest(TestCase):
 
     @data_provider(colors)
     def test_ConvertingFromHexToRGB(self, color, hex):
-        ReadXml = models.ReadXmlToPhpColors()
-        self.assertEqual(color, ReadXml.ConvertHexToRGB(hex), "did not get the expected result")
+        ReadXml = models.XmlToCss()
+        self.assertEqual(color, ReadXml.__convertHexToRGB(hex), "did not get the expected result")
 

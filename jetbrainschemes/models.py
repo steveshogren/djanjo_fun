@@ -3,64 +3,71 @@ import Image
 import os.path
 from xml.dom import minidom
 
-#from django.db import models
+from django.db import models
+class CssSettings(models.Model):
+    def __unicode__(self):
+        return self.file_name
 
-#class CssSettings(models.Model):
-#    def __unicode__(self):
-#        return self.file_name
-#
-#    file_name = models.CharField(max_length=250)
-#    css = models.CharField(max_length=10000)
-#    last_updated = models.DateTimeField(auto_now=True)
+    file_name = models.CharField(max_length=250)
+    css = models.CharField(max_length=50000)
+    last_updated = models.DateTimeField(auto_now=True)
 
-class ReadXmlToPhpColors():
-    def parse(self):
+class XmlToPersistence():
+    def convert(self, file_name='coolblue.xml'):
+        c, created = CssSettings.objects.get_or_create(file_name=file_name)
         
-        xmlOptions = ["PHP_DOC_TAG", "PHP_KEYWORD", "TEXT", "PHP_VAR", "PHP_OPERATION_SIGN", "PHP_DOC_COMMENT_ID",
-                      "PHP_COMMENT", "PHP_IDENTIFIER", "PHP_STRING", "PHP_EXEC_COMMAND_ID",
-                      "PHP_COMMA", "PHP_BRACKETS", "PHP_HEREDOC_ID", "PHP_NUMBER", "PHP_SEMICOLON", "PHP_PREDEFINED SYMBOL",
-                      "PHP_HEREDOC_CONTENT", "PHP_SCRIPTING_BACKGROUND", "PHP_TAG", "JS.KEYWORD",
-                      "JS.KEYWORD", "JS.STRING"]
+        xmlToCss = XmlToCss()
+        c.css = xmlToCss.convert(file_name)
+        
+        c.save()
 
+class XmlToCss():
+    def convert(self, file_name):
+        xmlOptions = []
         xmlOverrides = {"PHP_SCRIPTING_BACKGROUND": "TEXT" }
         cssString = ""
         override = None
-        xmldoc = minidom.parse('jetbrainschemes/coolblue.xml')
-#        xmldoc = minidom.parse('jetbrainschemes/default3.xml')
-#        xmldoc = minidom.parse('jetbrainschemes/emacs.xml')
+        xmldoc = minidom.parse('jetbrainschemes/' + file_name)
+
+        optionsToSkip = ["EFFECT_TYPE", "FONT_TYPE", "BACKGROUND", "FOREGROUND", "EFFECT_COLOR", "ERROR_STRIPE_COLOR"]
+        for node in xmldoc.getElementsByTagName("option"):
+            if node.getAttribute("name") not in optionsToSkip:
+                xmlOptions.append(node.getAttribute("name").encode('utf8'))
+
+        print (xmlOptions)
         for xmlOption in xmlOptions:
             if xmlOption in xmlOverrides:
                 override = xmlOverrides[xmlOption]
-            cssString += self.ConvertToCSS(xmlOption, override, xmldoc)
+            cssString += self.__convertToCss(xmlOption, override, xmldoc)
         return cssString
 
-    def ConvertToCSS(self, value, override, xml):
+    def __convertToCss(self, value, override, xml):
         className = value.replace (" ", "_")
         className = className.replace (".", "_")
         css = "." + className + " { "
 
-        foreground = self.Lookup(xml, value, "FOREGROUND", override)
+        foreground = self.__lookupXmlOption(xml, value, "FOREGROUND", override)
         if foreground:
             paddedHexColor = foreground.zfill(6)
             css += "color: #" + paddedHexColor + ";"
 
-        back = self.Lookup(xml, value, "BACKGROUND", override)
+        back = self.__lookupXmlOption(xml, value, "BACKGROUND", override)
         if back:
             paddedHexColor = back.zfill(6)
             css += "background: #" + paddedHexColor + ";"
 
-        style = self.ConvertFontStyle(self.Lookup(xml, value, "FONT_TYPE"))
+        style = self.__convertFontStyle(self.__lookupXmlOption(xml, value, "FONT_TYPE"))
         if style:
             css += style + "; "
 
-        decoration = self.ConvertTextDecoration(self.Lookup(xml, value, "EFFECT_TYPE"), self.Lookup(xml, value, "EFFECT_COLOR"))
+        decoration = self.__convertTextDecoration(self.__lookupXmlOption(xml, value, "EFFECT_TYPE"), self.__lookupXmlOption(xml, value, "EFFECT_COLOR"))
         if decoration:
             css += decoration
         css += " } \n"
 
         return css
 
-    def ConvertFontStyle(self, id):
+    def __convertFontStyle(self, id):
         styleText = ""
         if id:
             id = int(id)
@@ -73,7 +80,7 @@ class ReadXmlToPhpColors():
 
         return styleText
 
-    def ConvertTextDecoration(self, id, color):
+    def __convertTextDecoration(self, id, color):
         styleText = ""
         if id and color:
             id = int(id)
@@ -88,7 +95,7 @@ class ReadXmlToPhpColors():
             elif id == 2:
                 colorString = color.encode('utf8')
                 colorString = colorString.zfill(6)
-                self.CreateWavyImage(colorString)
+                self.__createWavyImage(colorString)
                 return "background: url(" + settings.MEDIA_URL + colorString + ".png) bottom repeat-x;"
             elif id == 3:
                 return "text-decoration: line-through;" # Not sure how to make this its own color...
@@ -103,12 +110,12 @@ class ReadXmlToPhpColors():
 
         return styleText
 
-    def ConvertHexToRGB(self, value):
+    def __convertHexToRGB(self, value):
         value = value.lstrip('#').zfill(6)
         lv = len(value)
         return tuple(int(value[i:i+lv/3], 16) for i in range(0, lv, lv/3))
 
-    def CreateWavyImage(self, hex_color):
+    def __createWavyImage(self, hex_color):
         hex_color = hex_color.lstrip('#').zfill(6)
         if os.path.isfile(os.path.join(settings.MEDIA_ROOT, hex_color + ".png")):
             return True
@@ -116,7 +123,7 @@ class ReadXmlToPhpColors():
             im = Image.open(os.path.join(settings.MEDIA_ROOT, "underline.gif"))
             im = im.convert("RGBA")
             pixels = im.load()
-            rgb = self.ConvertHexToRGB(hex_color)
+            rgb = self.__convertHexToRGB(hex_color)
             color_value= rgb + (255, )
             invisible_value = (255, 255, 255, 0)
             pixels[0, 0] = invisible_value
@@ -137,16 +144,17 @@ class ReadXmlToPhpColors():
             im.save(os.path.join(settings.MEDIA_ROOT, hex_color + ".png"), "PNG")
         return True
 
-    def Lookup(self, xmldoc, firstName, secondName, overrideName=None):
+    def __lookupXmlOption(self, xmldoc, firstName, secondName, overrideName=None):
         for node in xmldoc.getElementsByTagName("option"):
             if node.getAttribute("name") == firstName:
-                children = node.childNodes[1]
-                for node in children.getElementsByTagName("option"):
-                    if node.getAttribute("name") == secondName:
-                        if node.getAttribute("value"):
-                            return node.getAttribute("value")
+                if len(node.childNodes) > 1:
+                    children = node.childNodes[1]
+                    for node in children.getElementsByTagName("option"):
+                        if node.getAttribute("name") == secondName:
+                            if node.getAttribute("value"):
+                                return node.getAttribute("value")
         if overrideName:
-            return self.Lookup(xmldoc, overrideName, secondName)
+            return self.__lookupXmlOption(xmldoc, overrideName, secondName)
 
 
 #test = ReadXmlToPhpColors()
