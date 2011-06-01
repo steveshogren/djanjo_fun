@@ -7,8 +7,8 @@ from jetbrainschemes.models import XmlToPersistence, CssSettings
 def index(request):
     file_name = 'coolblue.xml'
 
-#    xmlToPersistence = XmlToPersistence()
-#    xmlToPersistence.convert(file_name)
+    xmlToPersistence = XmlToPersistence()
+    xmlToPersistence.convert(file_name)
 
     c = CssSettings.objects.get(file_name=file_name)
 
