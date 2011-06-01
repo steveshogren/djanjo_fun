@@ -26,21 +26,21 @@ class XmlToCss():
     def __convertToCss(self, value, override, xml):
         className = value.replace (" ", "_")
         className = className.replace (".", "_")
-        css = "." + className + " { "
+        css = "." + className + " { \n"
 
         foreground = self.__lookupXmlOption(xml, value, "FOREGROUND", override)
         if foreground:
             paddedHexColor = foreground.zfill(6)
-            css += "   color: #" + paddedHexColor + "; /* Foreground */ \n "
+            css += "   /* Foreground */ color: #" + paddedHexColor + ";  \n"
 
         back = self.__lookupXmlOption(xml, value, "BACKGROUND", override)
         if back:
             paddedHexColor = back.zfill(6)
-            css += "   background: #" + paddedHexColor + "; /* BackGround */ \n"
+            css += "   /* BackGround */ background: #" + paddedHexColor + ";  \n"
 
-        css += "   " + self.__convertFontStyle(self.__lookupXmlOption(xml, value, "FONT_TYPE")) + "; /* Font Type */ \n"
-        css += "   " + self.__convertTextDecoration(self.__lookupXmlOption(xml, value, "EFFECT_TYPE"), self.__lookupXmlOption(xml, value, "EFFECT_COLOR")) + "; /* Effect */ \n"
-        css += " } \n"
+        css += "   /* Font Type */ " + self.__convertFontStyle(self.__lookupXmlOption(xml, value, "FONT_TYPE")) + ";  \n"
+        css += "   /* Effect */ " + self.__convertTextDecoration(self.__lookupXmlOption(xml, value, "EFFECT_TYPE"), self.__lookupXmlOption(xml, value, "EFFECT_COLOR")) + "; \n"
+        css += "} \n"
 
         return css
 
