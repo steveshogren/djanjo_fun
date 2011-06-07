@@ -41,18 +41,17 @@
 
 <code class="TEXT">
     <pre class="PHP_SCRIPTING_BACKGROUND">
-<span class="XML_PROLOGUE"><?</span><span class="XML_ATTRIBUTE_NAME">xml version=</span><span class="XML_ATTRIBUTE_VALUE">'1.0'</span><span class="XML_ATTRIBUTE_NAME">encoding=</span><span class="XML_ATTRIBUTE_VALUE">'ISO-8859-1'</span><span class="XML_PROLOGUE">?></span>
-<span class="XML_TAG_NAME">&lt;!DOCTYPE index></span>
-<span class="XML_COMMENT"><!-- Some xml example --></span>
+<span class="XML_PROLOGUE">&lt;?</span><span class="XML_ATTRIBUTE_NAME">xml version=</span><span class="XML_ATTRIBUTE_VALUE">'1.0'</span><span class="XML_ATTRIBUTE_NAME">encoding=</span><span class="XML_ATTRIBUTE_VALUE">'ISO-8859-1'</span><span class="XML_PROLOGUE">?></span>
+<span class="XML_TAG_NAME">&lt;!DOCTYPE index&gt;</span>
+<span class="XML_COMMENT">&lt;!-- Some xml example --></span>
 <span class="XML_TAG">&lt;</span><span class="XML_TAG_NAME">index</span> <span class="XML_ATTRIBUTE_NAME">version=</span><span class="XML_ATTRIBUTE_VALUE">"1.0"</span><span class="XML_TAG">></span>
-   <span class="XML_TAG">&lt;</span><span class="XML_TAG_NAME">name</span><span class="XML_TAG">></span><span class="XML_TAG_VALUE">Main Index</span><span class="XML_TAG">&lt;/</span><span class="XML_TAG_NAME">name</span><span class="XML_COMMENT">></span>
-   <indexitem text="rename" target="refactoring.rename"/>
-   <indexitem text="move" target="refactoring.move"/>
-   <indexitem text="migrate" target="refactoring.migrate"/>
-   <indexitem text="usage search" target="find.findUsages"/>
-&amp; &#x00B7;   <indexitem text="project" target="project.management"/>
-</index>
-
+   <span class="XML_TAG">&lt;</span><span class="XML_TAG_NAME">name</span><span class="XML_TAG">></span><span class="XML_TAG_VALUE">Main Index</span><span class="XML_TAG">&lt;/</span><span class="XML_TAG_NAME">name</span><span class="XML_TAG">&gt;</span>
+   <span class="XML_TAG">&lt;</span><span class="XML_TAG_NAME">indexitem</span> <span class="XML_ATTRIBUTE_NAME">text=</span><span class="XML_ATTRIBUTE_VALUE">"rename"</span> <span class="XML_ATTRIBUTE_NAME">target=</span><span class="XML_ATTRIBUTE_VALUE">"refactoring.rename"</span><span class="XML_TAG">/&gt;</span>
+   <span class="XML_TAG">&lt;</span><span class="XML_TAG_NAME">indexitem</span> <span class="XML_ATTRIBUTE_NAME">text=</span><span class="XML_ATTRIBUTE_VALUE">"move"</span> <span class="XML_ATTRIBUTE_NAME">target=</span><span class="XML_ATTRIBUTE_VALUE">"refactoring.move"</span><span class="XML_TAG">/&gt;</span>
+   <span class="XML_TAG">&lt;</span><span class="XML_TAG_NAME">indexitem</span> <span class="XML_ATTRIBUTE_NAME">text=</span><span class="XML_ATTRIBUTE_VALUE">"migrate"</span> <span class="XML_ATTRIBUTE_NAME">target=</span><span class="XML_ATTRIBUTE_VALUE">"refactoring.migrate"</span><span class="XML_TAG">/&gt;</span>
+   <span class="XML_TAG">&lt;</span><span class="XML_TAG_NAME">indexitem</span> <span class="XML_ATTRIBUTE_NAME">text=</span><span class="XML_ATTRIBUTE_VALUE">"usage search"</span> <span class="XML_ATTRIBUTE_NAME">target=</span><span class="XML_ATTRIBUTE_VALUE">"find.findUsages"</span><span class="XML_TAG">/&gt;</span>
+<span class="XML_ENTITY_REFERENCE">&amp;amp; &amp;#x00B7;</span>   <span class="XML_TAG">&lt;</span><span class="XML_TAG_NAME">indexitem</span> <span class="XML_ATTRIBUTE_NAME">text=</span><span class="XML_ATTRIBUTE_VALUE">"project"</span> <span class="XML_ATTRIBUTE_NAME">target=</span><span class="XML_ATTRIBUTE_VALUE">"project.management"</span><span class="XML_TAG">/&gt;</span>
+<span class="XML_TAG">&lt;/</span><span class="XML_TAG_NAME">index</span><span class="XML_TAG">&gt;</span>
     </pre>
 </code>
 <br />
@@ -60,22 +59,59 @@
 <br />
 
 <code class="TEXT">
-    <pre class="">
-<span class="JS_KEYWORD">var</span> globalVar;
-/**
- * Constructor for <code>AjaxRequest</code> class
- * @param url the url for the request<p/>
- */
-<span class="JS_KEYWORD">function</span> AjaxRequest(url) {
-  <span class="JS_KEYWORD">var</span> urls = [ <span class="JS_STRING">"www.cnn.com"</span>, 5, globalVar];
-  <span class="JS_KEYWORD">this</span>.request = <span class="JS_KEYWORD">new</span> XMLHttpRequest();
-  url = url.replace(/^\s*(.*)/, <span class="JS_STRING">"$1"</span>); // skip leading whitespace
-  /* check the url to be in urls */
-  var a = <span class="JS_STRING">"</span>\u1111\z\n\u11<span class="JS_STRING">"</span>;
-  this.foo = new function() {};
-  foo();
-  #
+    <pre class="PHP_SCRIPTING_BACKGROUND">
+<span class="HTML_TAG">&lt;!DOCTYPE</span> <span class="HTML_ATTRIBUTE_NAME">HTML</span> <span class="HTML_TAG">PUBLIC</span> <span class="HTML_ATTRIBUTE_VALUE">"-//W3C//DTD HTML 3.2//EN"</span><span class="HTML_TAG">&gt;</span>
+<span class="HTML_COMMENT">&lt;!--
+*        Sample comment
+--&gt;</span>
+<span class="HTML_TAG">&lt;</span><span class="HTML_TAG_NAME">HTML</span><span class="HTML_TAG">&gt;</span>
+<span class="HTML_TAG">&lt;</span><span class="HTML_TAG_NAME">head</span><span class="HTML_TAG">&gt;</span>
+<span class="HTML_TAG">&lt;</span><span class="HTML_TAG_NAME">title</span><span class="HTML_TAG">&gt;PyCharm&lt;/</span></span><span class="HTML_TAG_NAME">title</span></span><span class="HTML_TAG">&gt;</span>
+<span class="HTML_TAG">&lt;/</span><span class="HTML_TAG_NAME">head</span><span class="HTML_TAG">&gt;</span>
+<span class="HTML_TAG">&lt;</span><span class="HTML_TAG_NAME">body</span><span class="HTML_TAG">&gt;</span>
+<span class="HTML_TAG">&lt;</span><span class="HTML_TAG_NAME">hl</span><span class="HTML_TAG">&gt;PyCharm&lt;/</span></span><span class="HTML_TAG_NAME">hl</span></span><span class="HTML_TAG">&gt;</span>
+<span class="HTML_TAG">&lt;</span><span class="HTML_TAG_NAME">p</span><span class="HTML_TAG">&gt;</span><span class="HTML_TAG">&lt;</span><span class="HTML_TAG_NAME">br</span><span class="HTML_TAG">&gt;</span><span class="HTML_TAG">&lt;</span><span class="HTML_TAG_NAME">b</span><span class="HTML_TAG">&gt;</span><span class="HTML_TAG">&lt;</span><span class="HTML_TAG_NAME">IMG</span> <span class="HTML_ATTRIBUTE_NAME">border=</span><span class="HTML_ATTRIBUTE_VALUE">0</span> <span class="HTML_ATTRIBUTE_NAME">height=</span><span class="HTML_ATTRIBUTE_VALUE">12</span> <span class="HTML_ATTRIBUTE_NAME">src=</span><span class="HTML_ATTRIBUTE_VALUE">"images/hg.gif"</span> <span class="HTML_ATTRIBUTE_NAME">width=</span><span class="HTML_ATTRIBUTE_VALUE">18</span> <span class="HTML_TAG">&gt;</span>
+<span class="HTML_TAG">What is PyCharm?</span> <span class="HTML_ENTITY_REFERENCE">&amp;#x00B7; &amp;Alpha;</span> <span class="HTML_TAG">&lt;/</span><span class="HTML_TAG_NAME">b</span><span class="HTML_TAG">&gt;</span><span class="HTML_TAG">&lt;</span><span class="HTML_TAG_NAME">br</span><span class="HTML_TAG">&gt;</span><span class="HTML_TAG">&lt;</span><span class="HTML_TAG_NAME">br</span><span class="HTML_TAG">&gt;</span>
+<span class="HTML_TAG">&lt;/</span><span class="HTML_TAG_NAME">body</span><span class="HTML_TAG">&gt;</span>
+<span class="HTML_TAG">&lt;/</span><span class="HTML_TAG_NAME">html</span><span class="HTML_TAG">&gt;</span>
+    </pre>
+</code>
+<br />
+<br />
+<br />
+
+<code class="TEXT">
+    <pre class="PHP_SCRIPTING_BACKGROUND">
+<span class="CSS_KEYWORD">@import</span> <span class="CSS_STRING">"manual.css"</span>;
+<span class="CSS_TAG_NAME">h1</span>.<span class="CSS_IDENT">mystyle</span> {
+  <span class="CSS_PROPERTY_NAME">color</span>:<span class="CSS_PROPERTY_VALUE">blue</span>; <span class="CSS_COMMENT">/* TODO: change THIS to yellow for next version! */</span>
+  <span class="CSS_PROPERTY_NAME">font-size</span>: <span class="CSS_NUMBER">15</span><span class="CSS_PROPERTY_VALUE">pt</span>;
+  <span class="CSS_PROPERTY_NAME">border</span>:<span class="CSS_FUNCTION">rgb</span>(<span class="CSS_NUMBER">255</span>,<span class="CSS_NUMBER">0</span>,<span class="CSS_NUMBER">0</span>);
+  <span class="CSS_PROPERTY_NAME">background</span>:<span class="CSS_FUNCTION">url</span>(<span class="CSS_URL">hello.jpg</span>);
 }
+    </pre>
+</code>
+<br />
+<br />
+<br />
+
+<code class="TEXT">
+    <pre class="PHP_SCRIPTING_BACKGROUND">
+<span class="JS_KEYWORD">var</span> <span class="JS_GLOBAL_VARIABLE">globalVar</span><span class="JS_SEMICOLON">;</span>
+<span class="JS_DOC_COMMENT">/**
+ * Constructor for </span><span class="JS_DOC_MARKUP">&lt;code&gt;</span><span class="JS_DOC_COMMENT">AjaxRequest</span><span class="JS_DOC_MARKUP">&lt;/code&gt;</span> <span class="JS_DOC_COMMENT">class
+ * </span><span class="JS_DOC_TAG">@param</span> <span class="JS_DOC_COMMENT">url the url for the request</span><span class="JS_DOC_MARKUP">&lt;p/&gt;</span>
+ <span class="JS_DOC_COMMENT">*/</span>
+<span class="JS_KEYWORD">function</span> <span class="JS_GLOBAL_FUNCTION">AjaxRequest</span><span class="JS_PARENTHS">(</span><span class="JS_PARAMETER">url</span><span class="JS_PARENTHS">)</span> <span class="JS_BRACES">{</span>
+  <span class="JS_KEYWORD">var</span> <span class="JS_LOCAL_VARIABLE">urls</span> <span class="JS_OPERATION_SIGN">=</span> <span class="JS_BRACKETS">[</span> <span class="JS_STRING">"www.cnn.com"</span><span class="JS_COMMA">,</span> <span class="JS_NUMBER">5</span><span class="JS_COMMA">,</span> <span class="JS_GLOBAL_VARIABLE">globalVar</span><span class="JS_BRACKETS">]</span><span class="JS_SEMICOLON">;</span>
+  <span class="JS_KEYWORD">this</span><span class="JS_DOT">.</span><span class="JS_INSTANCE_MEMBER_VARIABLE">request</span> <span class="JS_OPERATION_SIGN">=</span> <span class="JS_KEYWORD">new</span> <span class="JS_GLOBAL_FUNCTION">XMLHttpRequest</span><span class="JS_PARENTHS">()</span><span class="JS_SEMICOLON">;</span>
+  <span class="JS_PARAMETER">url</span> <span class="JS_OPERATION_SIGN">=</span> <span class="JS_PARAMETER">url</span><span class="JS_DOT">.</span>replace<span class="JS_PARENTHS">(</span><span class="JS_REGEXP">/^\s*(.*)/</span><span class="JS_COMMA">,</span> <span class="JS_STRING">"$1"</span><span class="JS_PARENTHS">)</span><span class="JS_SEMICOLON">;</span> <span class="JS_LINE_COMMENT">// skip leading whitespace</span>
+  <span class="JS_BLOCK_COMMENT">/* check the url to be in urls */</span>
+  var <span class="JS_LOCAL_VARIABLE">a</span> <span class="JS_OPERATION_SIGN">=</span> <span class="JS_STRING">"</span><span class="JS_VALID_STRING_ESCAPE">\u1111</span><span class="JS_INVALID_STRING_ESCAPE">\z</span><span class="JS_VALID_STRING_ESCAPE">\n</span><span class="JS_INVALID_STRING_ESCAPE">\u11</span><span class="JS_STRING">"</span><span class="JS_SEMICOLON">;</span>
+  this<span class="JS_DOT">.</span><span class="JS_INSTANCE_MEMBER_FUNCTION">foo</span> <span class="JS_OPERATION_SIGN">=</span> new function<span class="JS_PARENTHS">()</span> <span class="JS_BRACES">{}</span><span class="JS_SEMICOLON">;</span>
+  <span class="JS_INSTANCE_MEMBER_FUNCTION">foo</span><span class="JS_PARENTHS">()</span><span class="JS_SEMICOLON">;</span>
+  <span class="JS_BADCHARACTER">#</span>
+<span class="JS_BRACES">}</span>
     </pre>
 </code>
 </body>

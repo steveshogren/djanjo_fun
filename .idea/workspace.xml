@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="47d1a078-ac50-4bcf-84c2-452962eed140" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jetbrainschemes/views.py" afterPath="$PROJECT_DIR$/jetbrainschemes/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/settings.py" afterPath="$PROJECT_DIR$/settings.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jetbrainschemes/allsettings.xml" afterPath="$PROJECT_DIR$/jetbrainschemes/allsettings.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/colors/index.html" afterPath="$PROJECT_DIR$/templates/colors/index.html" />
     </list>
     <ignored path="mysite.iws" />
@@ -30,8 +30,12 @@
       <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/colors/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="47" column="176" selection-start="4222" selection-end="4222" vertical-scroll-proportion="0.5992509">
-              <folding />
+            <state line="117" column="7" selection-start="12675" selection-end="12675" vertical-scroll-proportion="0.88372093">
+              <folding>
+                <marker date="1307441984000" expanded="true" signature="9778:12650" placeholder="..." />
+                <marker date="1307441984000" expanded="true" signature="9929:9959" placeholder="..." />
+                <marker date="1307441984000" expanded="true" signature="10131:10147" placeholder="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -48,7 +52,7 @@
       <file leaf-file-name="views.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/jetbrainschemes/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="30" selection-start="268" selection-end="268" vertical-scroll-proportion="0.0">
+            <state line="12" column="0" selection-start="355" selection-end="355" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -57,8 +61,12 @@
       <file leaf-file-name="allsettings.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/jetbrainschemes/allsettings.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="897" column="21" selection-start="33398" selection-end="33401" vertical-scroll-proportion="0.0">
-              <folding />
+            <state line="1894" column="21" selection-start="66114" selection-end="66114" vertical-scroll-proportion="0.0">
+              <folding>
+                <marker date="1307439960000" expanded="true" signature="74130:74178" placeholder="..." />
+                <marker date="1307439960000" expanded="true" signature="74130:74162" placeholder="..." />
+                <marker date="1307439960000" expanded="true" signature="74130:74148" placeholder="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -168,6 +176,20 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mysite" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mysite" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jetbrainschemes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="Favorites" />
@@ -177,7 +199,7 @@
   <component name="PropertiesComponent">
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="options.lastSelected" value="reference.settingsdialog.IDE.editor.colors.XML" />
+    <property name="options.lastSelected" value="reference.settingsdialog.IDE.editor.colors.JavaScript" />
     <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
   </component>
@@ -280,14 +302,15 @@
         <state line="1653" column="38" selection-start="57957" selection-end="57957" vertical-scroll-proportion="-0.092519686" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/jetbrainschemes/XmlToCss.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/jetbrainschemes/allsettings.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="897" column="21" selection-start="33398" selection-end="33401" vertical-scroll-proportion="0.0" />
+        <state line="1894" column="21" selection-start="66114" selection-end="66114" vertical-scroll-proportion="0.0">
+          <folding>
+            <marker date="1307439960000" expanded="true" signature="74130:74178" placeholder="..." />
+            <marker date="1307439960000" expanded="true" signature="74130:74162" placeholder="..." />
+            <marker date="1307439960000" expanded="true" signature="74130:74148" placeholder="..." />
+          </folding>
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/settings.py">
@@ -295,17 +318,26 @@
         <state line="90" column="17" selection-start="3288" selection-end="3288" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/jetbrainschemes/XmlToCss.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/jetbrainschemes/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="30" selection-start="268" selection-end="268" vertical-scroll-proportion="0.0">
+        <state line="12" column="0" selection-start="355" selection-end="355" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/colors/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="47" column="176" selection-start="4222" selection-end="4222" vertical-scroll-proportion="0.5992509">
-          <folding />
+        <state line="117" column="7" selection-start="12675" selection-end="12675" vertical-scroll-proportion="0.88372093">
+          <folding>
+            <marker date="1307441984000" expanded="true" signature="9778:12650" placeholder="..." />
+            <marker date="1307441984000" expanded="true" signature="9929:9959" placeholder="..." />
+            <marker date="1307441984000" expanded="true" signature="10131:10147" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
