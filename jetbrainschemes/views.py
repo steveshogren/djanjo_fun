@@ -5,7 +5,7 @@ from django.template.context import RequestContext
 from jetbrainschemes.models import XmlToPersistence, CssSettings
 
 def index(request):
-    file_name = 'Default1.xml'
+    file_name = 'AllDefaultsSet.xml'
 
     xmlToPersistence = XmlToPersistence()
     xmlToPersistence.convert(file_name)

@@ -29,7 +29,7 @@ PHP
     <span class="PHP_KEYWORD">function</span> <span class="PHP_IDENTIFIER">doSmth</span><span class="PHP_BRACKETS">(</span><span class="PHP_VAR">$abc</span><span class="PHP_COMMA">,</span> <span class="PHP_VAR">$def</span><span class="PHP_BRACKETS">)</span> <span class="PHP_BRACKETS">{</span>
         <span class="PHP_VAR">$v</span> <span class="PHP_OPERATION_SIGN">=</span> <span class="PHP_IDENTIFIER">Helper</span><span class="PHP_OPERATION_SIGN">::</span><span class="PHP_IDENTIFIER">convert</span><span class="PHP_BRACKETS">(</span><span class="PHP_VAR">$abc</span> <span class="PHP_OPERATION_SIGN">.</span> <span class="PHP_STRING">"</span>\n <span class="PHP_BRACKETS">{</span><span class="PHP_VAR">$def</span><span class="PHP_BRACKETS">}</span><span class="PHP_STRING">"</span><span class="PHP_BRACKETS">)</span><span class="PHP_SEMICOLON">;</span>
         <span class="PHP_VAR">$q</span> <span class="PHP_OPERATION_SIGN">=</span> <span class="PHP_KEYWORD">new</span> <span class="PHP_IDENTIFIER">Query</span><span class="PHP_BRACKETS">(</span> <span class="PHP_VAR">$this</span><span class="PHP_OPERATION_SIGN">-></span><span class="PHP_IDENTIFIER">invent</span><span class="PHP_BRACKETS">(</span><span class="PHP_PREDEFINED_SYMBOL">abs</span><span class="PHP_BRACKETS">(</span><span class="PHP_NUMBER">0x80</span><span class="PHP_BRACKETS">)</span><span class="PHP_BRACKETS">)</span> <span class="PHP_BRACKETS">)</span><span class="PHP_SEMICOLON">;</span>
-        <span class="PHP_KEYWORD">return</span> <span class="PHP_KEYWORD">array</span><span class="PHP_BRACKETS">(</span><span class="PHP_VAR">$v</span> => <span class="PHP_VAR">$q</span><span class="PHP_OPERATION_SIGN">-></span><span class="PHP_IDENTIFIER">result</span><span class="PHP_BRACKETS">)</span><span class="PHP_SEMICOLON">;</span>
+        <span class="PHP_KEYWORD">return array</span><span class="PHP_BRACKETS">(</span><span class="PHP_VAR">$v</span> <span class="PHP_OPERATION_SIGN">=></span> <span class="PHP_VAR">$q</span><span class="PHP_OPERATION_SIGN">-></span><span class="PHP_IDENTIFIER">result</span><span class="PHP_BRACKETS">)</span><span class="PHP_SEMICOLON">;</span>
     <span class="PHP_BRACKETS">}</span>
 <span class="PHP_BRACKETS">}</span>
 
@@ -48,13 +48,13 @@ XML
 <span class="XML_PROLOGUE">&lt;?</span><span class="XML_ATTRIBUTE_NAME">xml version=</span><span class="XML_ATTRIBUTE_VALUE">'1.0'</span><span class="XML_ATTRIBUTE_NAME">encoding=</span><span class="XML_ATTRIBUTE_VALUE">'ISO-8859-1'</span><span class="XML_PROLOGUE">?></span>
 <span class="XML_TAG_NAME">&lt;!DOCTYPE index&gt;</span>
 <span class="XML_COMMENT">&lt;!-- Some xml example --></span>
-<span class="XML_TAG">&lt;</span><span class="XML_TAG_NAME">index</span> <span class="XML_ATTRIBUTE_NAME">version=</span><span class="XML_ATTRIBUTE_VALUE">"1.0"</span><span class="XML_TAG">></span>
+<span class="XML_TAG">&lt;</span><span class="XML_TAG_NAME">index </span><span class="XML_ATTRIBUTE_NAME">version=</span><span class="XML_ATTRIBUTE_VALUE">"1.0"</span><span class="XML_TAG">></span>
    <span class="XML_TAG">&lt;</span><span class="XML_TAG_NAME">name</span><span class="XML_TAG">></span><span class="XML_TAG_DATA">Main Index</span><span class="XML_TAG">&lt;/</span><span class="XML_TAG_NAME">name</span><span class="XML_TAG">&gt;</span>
-   <span class="XML_TAG">&lt;</span><span class="XML_TAG_NAME">indexitem</span> <span class="XML_ATTRIBUTE_NAME">text=</span><span class="XML_ATTRIBUTE_VALUE">"rename"</span> <span class="XML_ATTRIBUTE_NAME">target=</span><span class="XML_ATTRIBUTE_VALUE">"refactoring.rename"</span><span class="XML_TAG">/&gt;</span>
-   <span class="XML_TAG">&lt;</span><span class="XML_TAG_NAME">indexitem</span> <span class="XML_ATTRIBUTE_NAME">text=</span><span class="XML_ATTRIBUTE_VALUE">"move"</span> <span class="XML_ATTRIBUTE_NAME">target=</span><span class="XML_ATTRIBUTE_VALUE">"refactoring.move"</span><span class="XML_TAG">/&gt;</span>
-   <span class="XML_TAG">&lt;</span><span class="XML_TAG_NAME">indexitem</span> <span class="XML_ATTRIBUTE_NAME">text=</span><span class="XML_ATTRIBUTE_VALUE">"migrate"</span> <span class="XML_ATTRIBUTE_NAME">target=</span><span class="XML_ATTRIBUTE_VALUE">"refactoring.migrate"</span><span class="XML_TAG">/&gt;</span>
-   <span class="XML_TAG">&lt;</span><span class="XML_TAG_NAME">indexitem</span> <span class="XML_ATTRIBUTE_NAME">text=</span><span class="XML_ATTRIBUTE_VALUE">"usage search"</span> <span class="XML_ATTRIBUTE_NAME">target=</span><span class="XML_ATTRIBUTE_VALUE">"find.findUsages"</span><span class="XML_TAG">/&gt;</span>
-<span class="XML_ENTITY_REFERENCE">&amp;amp; &amp;#x00B7;</span>   <span class="XML_TAG">&lt;</span><span class="XML_TAG_NAME">indexitem</span> <span class="XML_ATTRIBUTE_NAME">text=</span><span class="XML_ATTRIBUTE_VALUE">"project"</span> <span class="XML_ATTRIBUTE_NAME">target=</span><span class="XML_ATTRIBUTE_VALUE">"project.management"</span><span class="XML_TAG">/&gt;</span>
+   <span class="XML_TAG">&lt;</span><span class="XML_TAG_NAME">indexitem </span><span class="XML_ATTRIBUTE_NAME">text=</span><span class="XML_ATTRIBUTE_VALUE">"rename"</span><span class="XML_ATTRIBUTE_NAME"> target=</span><span class="XML_ATTRIBUTE_VALUE">"refactoring.rename"</span><span class="XML_TAG">/&gt;</span>
+   <span class="XML_TAG">&lt;</span><span class="XML_TAG_NAME">indexitem </span><span class="XML_ATTRIBUTE_NAME">text=</span><span class="XML_ATTRIBUTE_VALUE">"move"</span><span class="XML_ATTRIBUTE_NAME"> target=</span><span class="XML_ATTRIBUTE_VALUE">"refactoring.move"</span><span class="XML_TAG">/&gt;</span>
+   <span class="XML_TAG">&lt;</span><span class="XML_TAG_NAME">indexitem </span><span class="XML_ATTRIBUTE_NAME">text=</span><span class="XML_ATTRIBUTE_VALUE">"migrate"</span><span class="XML_ATTRIBUTE_NAME"> target=</span><span class="XML_ATTRIBUTE_VALUE">"refactoring.migrate"</span><span class="XML_TAG">/&gt;</span>
+   <span class="XML_TAG">&lt;</span><span class="XML_TAG_NAME">indexitem </span><span class="XML_ATTRIBUTE_NAME">text=</span><span class="XML_ATTRIBUTE_VALUE">"usage search"</span><span class="XML_ATTRIBUTE_NAME"> target=</span><span class="XML_ATTRIBUTE_VALUE">"find.findUsages"</span><span class="XML_TAG">/&gt;</span>
+<span class="XML_ENTITY_REFERENCE">&amp;amp; &amp;#x00B7;</span>   <span class="XML_TAG">&lt;</span><span class="XML_TAG_NAME">indexitem </span><span class="XML_ATTRIBUTE_NAME">text=</span><span class="XML_ATTRIBUTE_VALUE">"project"</span><span class="XML_ATTRIBUTE_NAME"> target=</span><span class="XML_ATTRIBUTE_VALUE">"project.management"</span><span class="XML_TAG">/&gt;</span>
 <span class="XML_TAG">&lt;/</span><span class="XML_TAG_NAME">index</span><span class="XML_TAG">&gt;</span>
     </pre>
 </code>
@@ -65,7 +65,7 @@ HTML
 
 <code class="TEXT">
     <pre class="TEXT">
-<span class="HTML_TAG">&lt;!DOCTYPE</span> <span class="HTML_ATTRIBUTE_NAME">HTML</span> <span class="HTML_TAG">PUBLIC</span> <span class="HTML_ATTRIBUTE_VALUE">"-//W3C//DTD HTML 3.2//EN"</span><span class="HTML_TAG">&gt;</span>
+<span class="HTML_TAG">&lt;!DOCTYPE </span><span class="HTML_ATTRIBUTE_NAME">HTML </span><span class="HTML_TAG">PUBLIC </span><span class="HTML_ATTRIBUTE_VALUE">"-//W3C//DTD HTML 3.2//EN"</span><span class="HTML_TAG">&gt;</span>
 <span class="HTML_COMMENT">&lt;!--
 *        Sample comment
 --&gt;</span>
@@ -75,8 +75,8 @@ HTML
 <span class="HTML_TAG">&lt;/</span><span class="HTML_TAG_NAME">head</span><span class="HTML_TAG">&gt;</span>
 <span class="HTML_TAG">&lt;</span><span class="HTML_TAG_NAME">body</span><span class="HTML_TAG">&gt;</span>
 <span class="HTML_TAG">&lt;</span><span class="HTML_TAG_NAME">hl</span><span class="HTML_TAG">&gt;</span>PyCharm<span class="HTML_TAG">&lt;/</span></span><span class="HTML_TAG_NAME">hl</span></span><span class="HTML_TAG">&gt;</span>
-<span class="HTML_TAG">&lt;</span><span class="HTML_TAG_NAME">p</span><span class="HTML_TAG">&gt;</span><span class="HTML_TAG">&lt;</span><span class="HTML_TAG_NAME">br</span><span class="HTML_TAG">&gt;</span><span class="HTML_TAG">&lt;</span><span class="HTML_TAG_NAME">b</span><span class="HTML_TAG">&gt;</span><span class="HTML_TAG">&lt;</span><span class="HTML_TAG_NAME">IMG</span> <span class="HTML_ATTRIBUTE_NAME">border=</span><span class="HTML_ATTRIBUTE_VALUE">0</span> <span class="HTML_ATTRIBUTE_NAME">height=</span><span class="HTML_ATTRIBUTE_VALUE">12</span> <span class="HTML_ATTRIBUTE_NAME">src=</span><span class="HTML_ATTRIBUTE_VALUE">"images/hg.gif"</span> <span class="HTML_ATTRIBUTE_NAME">width=</span><span class="HTML_ATTRIBUTE_VALUE">18</span> <span class="HTML_TAG">&gt;</span>
-What is PyCharm? <span class="HTML_ENTITY_REFERENCE">&amp;#x00B7; &amp;Alpha;</span> <span class="HTML_TAG">&lt;/</span><span class="HTML_TAG_NAME">b</span><span class="HTML_TAG">&gt;</span><span class="HTML_TAG">&lt;</span><span class="HTML_TAG_NAME">br</span><span class="HTML_TAG">&gt;</span><span class="HTML_TAG">&lt;</span><span class="HTML_TAG_NAME">br</span><span class="HTML_TAG">&gt;</span>
+<span class="HTML_TAG">&lt;</span><span class="HTML_TAG_NAME">p</span><span class="HTML_TAG">&gt;</span><span class="HTML_TAG">&lt;</span><span class="HTML_TAG_NAME">br</span><span class="HTML_TAG">&gt;</span><span class="HTML_TAG">&lt;</span><span class="HTML_TAG_NAME">b</span><span class="HTML_TAG">&gt;</span><span class="HTML_TAG">&lt;</span><span class="HTML_TAG_NAME">IMG </span><span class="HTML_ATTRIBUTE_NAME">border=</span><span class="HTML_ATTRIBUTE_VALUE">0 </span><span class="HTML_ATTRIBUTE_NAME">height=</span><span class="HTML_ATTRIBUTE_VALUE">12 </span><span class="HTML_ATTRIBUTE_NAME">src=</span><span class="HTML_ATTRIBUTE_VALUE">"images/hg.gif" </span><span class="HTML_ATTRIBUTE_NAME">width=</span><span class="HTML_ATTRIBUTE_VALUE">18 </span><span class="HTML_TAG">&gt;</span>
+What is PyCharm? <span class="HTML_ENTITY_REFERENCE">&amp;#x00B7; &amp;Alpha; </span><span class="HTML_TAG">&lt;/</span><span class="HTML_TAG_NAME">b</span><span class="HTML_TAG">&gt;</span><span class="HTML_TAG">&lt;</span><span class="HTML_TAG_NAME">br</span><span class="HTML_TAG">&gt;</span><span class="HTML_TAG">&lt;</span><span class="HTML_TAG_NAME">br</span><span class="HTML_TAG">&gt;</span>
 <span class="HTML_TAG">&lt;/</span><span class="HTML_TAG_NAME">body</span><span class="HTML_TAG">&gt;</span>
 <span class="HTML_TAG">&lt;/</span><span class="HTML_TAG_NAME">html</span><span class="HTML_TAG">&gt;</span>
     </pre>
@@ -114,7 +114,7 @@ DJANGO
 
 <code class="TEXT">
     <pre class="TEXT">
-<span class="DJANGO_COMMENT">{# Django Template Syntax HighLighting Demo #}</span>
+<span class="DJANGO_COMMENT">(&#35; Django Template Syntax HighLighting Demo &#35;)</span>
 <span class="DJANGO_TAG_START_END">&#123;%</span> <span class="DJANGO_TAG_NAME">for</span> <span class="DJANGO_ID">o</span> <span class="DJANGO_KEYWORD">in</span> <span class="DJANGO_NUMBER">1..10</span> <span class="DJANGO_TAG_START_END">%}</span>
     &lt;tr class="<span class="DJANGO_TAG_START_END">&#123;%</span> <span class="DJANGO_TAG_NAME">cycle</span> <span class="DJANGO_STRING_LITERAL">'row1'</span> <span class="DJANGO_STRING_LITERAL">'row2'</span> <span class="DJANGO_ID">row3</span> <span class="DJANGO_TAG_START_END">%}</span>">
         ...
@@ -122,22 +122,6 @@ DJANGO
 <span class="DJANGO_TAG_START_END">&#123;%</span> <span class="DJANGO_TAG_NAME">endfor</span> <span class="DJANGO_TAG_START_END">%}</span><span class="DJANGO_TAG_START_END">&#123%</span> <span class="DJANGO_TAG_NAME">filter</span> <span class="DJANGO_ID">force_escape</span><span class="DJANGO_FILTER">|</span><span class="DJANGO_ID">lower</span> <span class="DJANGO_TAG_START_END">%}</span>
     This text will be HTML-escaped, and will appear in all lowercase.
 <span class="DJANGO_TAG_START_END">&#123;%</span> <span class="DJANGO_TAG_NAME">endfilter</span> <span class="DJANGO_TAG_START_END">%}</span>
-    </pre>
-</code>
-<br />
-<br />
-
-CSS
-
-<code class="TEXT">
-    <pre class="TEXT">
-<span class="CSS_KEYWORD">@import</span> <span class="CSS_STRING">"manual.css"</span>;
-<span class="CSS_TAG_NAME">h1</span>.<span class="CSS_IDENT">mystyle</span> {
-  <span class="CSS_PROPERTY_NAME">color</span>:<span class="CSS_PROPERTY_VALUE">blue</span>; <span class="CSS_COMMENT">/* TODO: change THIS to yellow for next version! */</span>
-  <span class="CSS_PROPERTY_NAME">font-size</span>: <span class="CSS_NUMBER">15</span><span class="CSS_PROPERTY_VALUE">pt</span>;
-  <span class="CSS_PROPERTY_NAME">border</span>:<span class="CSS_FUNCTION">rgb</span>(<span class="CSS_NUMBER">255</span>,<span class="CSS_NUMBER">0</span>,<span class="CSS_NUMBER">0</span>);
-  <span class="CSS_PROPERTY_NAME">background</span>:<span class="CSS_FUNCTION">url</span>(<span class="CSS_URL">hello.jpg</span>);
-}
     </pre>
 </code>
 <br />
@@ -174,6 +158,22 @@ YAML
       body: The body of a static sidebar</span>
   <span class="YAML_SCALAR_KEY">type:</span> <span class="YAML_TEXT">StaticSidebar</span>
   <span class="YAML_SCALAR_KEY">type:</span> <span class="YAML_SCALAR_VALUE">&gt; some_type_here</span>
+    </pre>
+</code>
+<br />
+<br />
+
+CSS
+
+<code class="TEXT">
+    <pre class="TEXT">
+<span class="CSS_KEYWORD">@import</span> <span class="CSS_STRING">"manual.css"</span>;
+<span class="CSS_TAG_NAME">h1</span>.<span class="CSS_IDENT">mystyle</span> {
+  <span class="CSS_PROPERTY_NAME">color</span>:<span class="CSS_PROPERTY_VALUE">blue</span>; <span class="CSS_COMMENT">/* TODO: change THIS to yellow for next version! */</span>
+  <span class="CSS_PROPERTY_NAME">font-size</span>: <span class="CSS_NUMBER">15</span><span class="CSS_PROPERTY_VALUE">pt</span>;
+  <span class="CSS_PROPERTY_NAME">border</span>:<span class="CSS_FUNCTION">rgb</span>(<span class="CSS_NUMBER">255</span>,<span class="CSS_NUMBER">0</span>,<span class="CSS_NUMBER">0</span>);
+  <span class="CSS_PROPERTY_NAME">background</span>:<span class="CSS_FUNCTION">url</span>(<span class="CSS_URL">hello.jpg</span>);
+}
     </pre>
 </code>
 <br />
