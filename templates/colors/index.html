@@ -9,6 +9,9 @@
     </style>
 </head>
 <body>
+
+PHP
+
 <code class="TEXT">
     <pre class="PHP_SCRIPTING_BACKGROUND">
 <span class="PHP_TAG">&lt;?php</span>
@@ -26,7 +29,7 @@
     <span class="PHP_KEYWORD">function</span> <span class="PHP_IDENTIFIER">doSmth</span><span class="PHP_BRACKETS">(</span><span class="PHP_VAR">$abc</span><span class="PHP_COMMA">,</span> <span class="PHP_VAR">$def</span><span class="PHP_BRACKETS">)</span> <span class="PHP_BRACKETS">{</span>
         <span class="PHP_VAR">$v</span> <span class="PHP_OPERATION_SIGN">=</span> <span class="PHP_IDENTIFIER">Helper</span><span class="PHP_OPERATION_SIGN">::</span><span class="PHP_IDENTIFIER">convert</span><span class="PHP_BRACKETS">(</span><span class="PHP_VAR">$abc</span> <span class="PHP_OPERATION_SIGN">.</span> <span class="PHP_STRING">"</span>\n <span class="PHP_BRACKETS">{</span><span class="PHP_VAR">$def</span><span class="PHP_BRACKETS">}</span><span class="PHP_STRING">"</span><span class="PHP_BRACKETS">)</span><span class="PHP_SEMICOLON">;</span>
         <span class="PHP_VAR">$q</span> <span class="PHP_OPERATION_SIGN">=</span> <span class="PHP_KEYWORD">new</span> <span class="PHP_IDENTIFIER">Query</span><span class="PHP_BRACKETS">(</span> <span class="PHP_VAR">$this</span><span class="PHP_OPERATION_SIGN">-></span><span class="PHP_IDENTIFIER">invent</span><span class="PHP_BRACKETS">(</span><span class="PHP_PREDEFINED_SYMBOL">abs</span><span class="PHP_BRACKETS">(</span><span class="PHP_NUMBER">0x80</span><span class="PHP_BRACKETS">)</span><span class="PHP_BRACKETS">)</span> <span class="PHP_BRACKETS">)</span><span class="PHP_SEMICOLON">;</span>
-        <span class="PHP_KEYWORD">return</span> <span class="PHP_KEYWORD">array</span><span class="PHP_BRACKETS">(</span><span class="PHP_VAR">$v</span> => <span class="PHP_VAR">$q</span><span class="PHP_OPERATION_SIGN">-></span><span class="PHP_IDENTIFIER">result</span><span class="PHP_BRACKETS">)</span><span class="PHP_SEMICOLON">;</span>
+        <span class="PHP_KEYWORD">return array</span><span class="PHP_BRACKETS">(</span><span class="PHP_VAR">$v</span> <span class="PHP_OPERATION_SIGN">=></span> <span class="PHP_VAR">$q</span><span class="PHP_OPERATION_SIGN">-></span><span class="PHP_IDENTIFIER">result</span><span class="PHP_BRACKETS">)</span><span class="PHP_SEMICOLON">;</span>
     <span class="PHP_BRACKETS">}</span>
 <span class="PHP_BRACKETS">}</span>
 
@@ -37,37 +40,192 @@
 </code>
 <br />
 <br />
-<br />
+
+XML
 
 <code class="TEXT">
-    <pre class="PHP_SCRIPTING_BACKGROUND">
-
-
-
+    <pre class="TEXT">
+<span class="XML_PROLOGUE">&lt;?</span><span class="XML_ATTRIBUTE_NAME">xml version=</span><span class="XML_ATTRIBUTE_VALUE">'1.0'</span><span class="XML_ATTRIBUTE_NAME">encoding=</span><span class="XML_ATTRIBUTE_VALUE">'ISO-8859-1'</span><span class="XML_PROLOGUE">?></span>
+<span class="XML_TAG_NAME">&lt;!DOCTYPE index&gt;</span>
+<span class="XML_COMMENT">&lt;!-- Some xml example --></span>
+<span class="XML_TAG">&lt;</span><span class="XML_TAG_NAME">index </span><span class="XML_ATTRIBUTE_NAME">version=</span><span class="XML_ATTRIBUTE_VALUE">"1.0"</span><span class="XML_TAG">></span>
+   <span class="XML_TAG">&lt;</span><span class="XML_TAG_NAME">name</span><span class="XML_TAG">></span><span class="XML_TAG_DATA">Main Index</span><span class="XML_TAG">&lt;/</span><span class="XML_TAG_NAME">name</span><span class="XML_TAG">&gt;</span>
+   <span class="XML_TAG">&lt;</span><span class="XML_TAG_NAME">indexitem </span><span class="XML_ATTRIBUTE_NAME">text=</span><span class="XML_ATTRIBUTE_VALUE">"rename"</span><span class="XML_ATTRIBUTE_NAME"> target=</span><span class="XML_ATTRIBUTE_VALUE">"refactoring.rename"</span><span class="XML_TAG">/&gt;</span>
+   <span class="XML_TAG">&lt;</span><span class="XML_TAG_NAME">indexitem </span><span class="XML_ATTRIBUTE_NAME">text=</span><span class="XML_ATTRIBUTE_VALUE">"move"</span><span class="XML_ATTRIBUTE_NAME"> target=</span><span class="XML_ATTRIBUTE_VALUE">"refactoring.move"</span><span class="XML_TAG">/&gt;</span>
+   <span class="XML_TAG">&lt;</span><span class="XML_TAG_NAME">indexitem </span><span class="XML_ATTRIBUTE_NAME">text=</span><span class="XML_ATTRIBUTE_VALUE">"migrate"</span><span class="XML_ATTRIBUTE_NAME"> target=</span><span class="XML_ATTRIBUTE_VALUE">"refactoring.migrate"</span><span class="XML_TAG">/&gt;</span>
+   <span class="XML_TAG">&lt;</span><span class="XML_TAG_NAME">indexitem </span><span class="XML_ATTRIBUTE_NAME">text=</span><span class="XML_ATTRIBUTE_VALUE">"usage search"</span><span class="XML_ATTRIBUTE_NAME"> target=</span><span class="XML_ATTRIBUTE_VALUE">"find.findUsages"</span><span class="XML_TAG">/&gt;</span>
+<span class="XML_ENTITY_REFERENCE">&amp;amp; &amp;#x00B7;</span>   <span class="XML_TAG">&lt;</span><span class="XML_TAG_NAME">indexitem </span><span class="XML_ATTRIBUTE_NAME">text=</span><span class="XML_ATTRIBUTE_VALUE">"project"</span><span class="XML_ATTRIBUTE_NAME"> target=</span><span class="XML_ATTRIBUTE_VALUE">"project.management"</span><span class="XML_TAG">/&gt;</span>
+<span class="XML_TAG">&lt;/</span><span class="XML_TAG_NAME">index</span><span class="XML_TAG">&gt;</span>
     </pre>
 </code>
 <br />
 <br />
-<br />
+
+HTML
 
 <code class="TEXT">
-    <pre class="">
-<span class="JS_KEYWORD">var</span> globalVar;
-/**
- * Constructor for <code>AjaxRequest</code> class
- * @param url the url for the request<p/>
- */
-<span class="JS_KEYWORD">function</span> AjaxRequest(url) {
-  <span class="JS_KEYWORD">var</span> urls = [ <span class="JS_STRING">"www.cnn.com"</span>, 5, globalVar];
-  <span class="JS_KEYWORD">this</span>.request = <span class="JS_KEYWORD">new</span> XMLHttpRequest();
-  url = url.replace(/^\s*(.*)/, <span class="JS_STRING">"$1"</span>); // skip leading whitespace
-  /* check the url to be in urls */
-  var a = <span class="JS_STRING">"</span>\u1111\z\n\u11<span class="JS_STRING">"</span>;
-  this.foo = new function() {};
-  foo();
-  #
+    <pre class="TEXT">
+<span class="HTML_TAG">&lt;!DOCTYPE </span><span class="HTML_ATTRIBUTE_NAME">HTML </span><span class="HTML_TAG">PUBLIC </span><span class="HTML_ATTRIBUTE_VALUE">"-//W3C//DTD HTML 3.2//EN"</span><span class="HTML_TAG">&gt;</span>
+<span class="HTML_COMMENT">&lt;!--
+*        Sample comment
+--&gt;</span>
+<span class="HTML_TAG">&lt;</span><span class="HTML_TAG_NAME">HTML</span><span class="HTML_TAG">&gt;</span>
+<span class="HTML_TAG">&lt;</span><span class="HTML_TAG_NAME">head</span><span class="HTML_TAG">&gt;</span>
+<span class="HTML_TAG">&lt;</span><span class="HTML_TAG_NAME">title</span><span class="HTML_TAG">&gt;</span>PyCharm<span class="HTML_TAG">&lt;/</span></span><span class="HTML_TAG_NAME">title</span></span><span class="HTML_TAG">&gt;</span>
+<span class="HTML_TAG">&lt;/</span><span class="HTML_TAG_NAME">head</span><span class="HTML_TAG">&gt;</span>
+<span class="HTML_TAG">&lt;</span><span class="HTML_TAG_NAME">body</span><span class="HTML_TAG">&gt;</span>
+<span class="HTML_TAG">&lt;</span><span class="HTML_TAG_NAME">hl</span><span class="HTML_TAG">&gt;</span>PyCharm<span class="HTML_TAG">&lt;/</span></span><span class="HTML_TAG_NAME">hl</span></span><span class="HTML_TAG">&gt;</span>
+<span class="HTML_TAG">&lt;</span><span class="HTML_TAG_NAME">p</span><span class="HTML_TAG">&gt;</span><span class="HTML_TAG">&lt;</span><span class="HTML_TAG_NAME">br</span><span class="HTML_TAG">&gt;</span><span class="HTML_TAG">&lt;</span><span class="HTML_TAG_NAME">b</span><span class="HTML_TAG">&gt;</span><span class="HTML_TAG">&lt;</span><span class="HTML_TAG_NAME">IMG </span><span class="HTML_ATTRIBUTE_NAME">border=</span><span class="HTML_ATTRIBUTE_VALUE">0 </span><span class="HTML_ATTRIBUTE_NAME">height=</span><span class="HTML_ATTRIBUTE_VALUE">12 </span><span class="HTML_ATTRIBUTE_NAME">src=</span><span class="HTML_ATTRIBUTE_VALUE">"images/hg.gif" </span><span class="HTML_ATTRIBUTE_NAME">width=</span><span class="HTML_ATTRIBUTE_VALUE">18 </span><span class="HTML_TAG">&gt;</span>
+What is PyCharm? <span class="HTML_ENTITY_REFERENCE">&amp;#x00B7; &amp;Alpha; </span><span class="HTML_TAG">&lt;/</span><span class="HTML_TAG_NAME">b</span><span class="HTML_TAG">&gt;</span><span class="HTML_TAG">&lt;</span><span class="HTML_TAG_NAME">br</span><span class="HTML_TAG">&gt;</span><span class="HTML_TAG">&lt;</span><span class="HTML_TAG_NAME">br</span><span class="HTML_TAG">&gt;</span>
+<span class="HTML_TAG">&lt;/</span><span class="HTML_TAG_NAME">body</span><span class="HTML_TAG">&gt;</span>
+<span class="HTML_TAG">&lt;/</span><span class="HTML_TAG_NAME">html</span><span class="HTML_TAG">&gt;</span>
+    </pre>
+</code>
+<br />
+<br />
+
+PYTHON
+
+<code class="TEXT">
+    <pre class="TEXT">
+<span class="PY_OPERATION_SIGN">@</span><span class="PY_DECORATOR">decorator</span><span class="PY_PARENTHS">(</span>param<span class="PY_OPERATION_SIGN">=</span><span class="PY_NUMBER">1</span><span class="PY_PARENTHS">)</span>
+<span class="PY_KEYWORD">def</span> f<span class="PY_PARENTHS">(</span>x<span class="PY_PARENTHS">)</span><span class="PY_OPERATION_SIGN">:</span>
+    <span class="PY_DOC_COMMENT">""" Syntax Highlighting Demo """</span>
+    s <span class="PY_OPERATION_SIGN">=</span> <span class="PY_PARENTHS">(</span><span class="PY_STRING">"Test"</span><span class="PY_COMMA">,</span> <span class="PY_NUMBER">2</span><span class="PY_OPERATION_SIGN">+</span><span class="PY_NUMBER">3</span><span class="PY_COMMA">,</span> <span class="PY_BRACES">{</span><span class="PY_STRING">'a'</span><span class="PY_OPERATION_SIGN">:</span> <span class="PY_STRING">'b'</span><span class="PY_BRACES">}</span><span class="PY_COMMA">,</span> x<span class="PY_PARENTHS">)</span>   <span class="PY_LINE_COMMENT"># Comment</span>
+    <span class="PY_KEYWORD">print</span> s<span class="PY_BRACKETS">[</span><span class="PY_NUMBER">0</span><span class="PY_BRACKETS">]</span><span class="PY_DOT">.</span>lower<span class="PY_PARENTHS">()</span>
+
+<span class="PY_KEYWORD">class</span> <span class="PY_CLASS_DEFINITION">Foo</span><span class="PY_OPERATION_SIGN">:</span>
+    <span class="PY_KEYWORD">def</span> <span class="PY_PREDEFINED_DEFINITION">__init__</span><span class="PY_PARENTHS">(</span>self<span class="PY_PARENTHS">)</span><span class="PY_OPERATION_SIGN">:</span>
+        self<span class="PY_DOT">.</span>sense <span class="PY_OPERATION_SIGN">=</span> None
+        byte_string <span class="PY_OPERATION_SIGN">=</span> <span class="PY_STRING">'newline:</span><span class="PY_VALID_STRING_ESCAPE">\n</span><span class="PY_STRING"> also newline:</span><span class="PY_VALID_STRING_ESCAPE">\x0a</span><span class="PY_STRING">'</span>
+        text_string <span class="PY_OPERATION_SIGN">=</span> <span class="PY_STRING">u"Cyrillic A is </span><span class="PY_VALID_STRING_ESCAPE">\u0410</span><span class="PY_STRING">. Oops: </span><span class="PY_INVALID_STRING_ESCAPE">\u123g</span><span class="PY_STRING">"</span>
+
+    <span class="PY_KEYWORD">def</span> <span class="PY_FUNC_DEFINITION">makeSense</span><span class="PY_PARENTHS">(</span>self<span class="PY_COMMA">,</span> whatever<span class="PY_PARENTHS">)</span><span class="PY_OPERATION_SIGN">:</span>
+        self<span class="PY_DOT">.</span>sense <span class="PY_OPERATION_SIGN">=</span> whatever
+
+x <span class="PY_OPERATION_SIGN">=</span> <span class="PY_BUILTIN_NAME">len</span><span class="PY_PARENTHS">(</span><span class="PY_STRING">'abc'</span><span class="PY_PARENTHS">)</span>
+<span class="PY_KEYWORD">print</span><span class="PY_PARENTHS">(</span>f<span class="PY_DOT">.</span><span class="PY_PREDEFINED_USAGE">__doc__</span><span class="PY_PARENTHS">)</span>
+    </pre>
+</code>
+<br />
+<br />
+
+DJANGO
+
+<code class="TEXT">
+    <pre class="TEXT">
+<span class="DJANGO_COMMENT">(&#35; Django Template Syntax HighLighting Demo &#35;)</span>
+<span class="DJANGO_TAG_START_END">&#123;%</span> <span class="DJANGO_TAG_NAME">for</span> <span class="DJANGO_ID">o</span> <span class="DJANGO_KEYWORD">in</span> <span class="DJANGO_NUMBER">1..10</span> <span class="DJANGO_TAG_START_END">%}</span>
+    &lt;tr class="<span class="DJANGO_TAG_START_END">&#123;%</span> <span class="DJANGO_TAG_NAME">cycle</span> <span class="DJANGO_STRING_LITERAL">'row1'</span> <span class="DJANGO_STRING_LITERAL">'row2'</span> <span class="DJANGO_ID">row3</span> <span class="DJANGO_TAG_START_END">%}</span>">
+        ...
+    &lt;/tr&gt;
+<span class="DJANGO_TAG_START_END">&#123;%</span> <span class="DJANGO_TAG_NAME">endfor</span> <span class="DJANGO_TAG_START_END">%}</span><span class="DJANGO_TAG_START_END">&#123%</span> <span class="DJANGO_TAG_NAME">filter</span> <span class="DJANGO_ID">force_escape</span><span class="DJANGO_FILTER">|</span><span class="DJANGO_ID">lower</span> <span class="DJANGO_TAG_START_END">%}</span>
+    This text will be HTML-escaped, and will appear in all lowercase.
+<span class="DJANGO_TAG_START_END">&#123;%</span> <span class="DJANGO_TAG_NAME">endfilter</span> <span class="DJANGO_TAG_START_END">%}</span>
+    </pre>
+</code>
+<br />
+<br />
+
+GQL
+
+<code class="TEXT">
+    <pre class="TEXT">
+<span class="GQL_KEYWORD">SELECT</span> * <span class="GQL_KEYWORD">FROM</span> <span class="GQL_ID">Orders</span>
+    <span class="GQL_KEYWORD">WHERE</span> <span class="GQL_ID">time</span> &gt; <span class="GQL_ID">TIME</span>(<span class="GQL_STRING_LITERAL">'12.00.00'</span>) <span class="GQL_KEYWORD">AND</span> <span class="GQL_ID">price</span>&gt;<span class="GQL_INT_LITERAL">100</span>
+    <span class="GQL_KEYWORD">ORDER BY</span> <span class="GQL_ID">time</span> <span class="GQL_KEYWORD">ASC</span>
+    <span class="GQL_KEYWORD">LIMIT</span> <span class="GQL_INT_LITERAL">10</span>
+    <span class="GQL_KEYWORD">OFFSET</span> <span class="GQL_INT_LITERAL">10</span>
+    </pre>
+</code>
+<br />
+<br />
+
+YAML
+
+<code class="TEXT">
+    <pre class="TEXT">
+<span class="YAML_SIGN">---</span>
+<span class="YAML_COMMENT"># Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html</span>
+<span class="YAML_SCALAR_KEY">static_sidebar:</span>
+  <span class="YAML_SCALAR_KEY">id:</span> <span class="YAML_SCALAR_DSTRING">"foo"</span>
+  <span class="YAML_SCALAR_KEY">name:</span> <span class="YAML_SCALAR_STRING">'side_bar'</span>
+  <span class="YAML_SCALAR_KEY">staged_position:</span> <span class="YAML_TEXT">1</span>
+  <span class="YAML_SCALAR_KEY">blog_id:</span> <span class="YAML_TEXT">1</span>
+  <span class="YAML_SCALAR_KEY">config:</span> <span class="YAML_SCALAR_LIST">|+
+    --- !map:HashWithIndifferentAccess
+      title: Static Sidebar
+      body: The body of a static sidebar</span>
+  <span class="YAML_SCALAR_KEY">type:</span> <span class="YAML_TEXT">StaticSidebar</span>
+  <span class="YAML_SCALAR_KEY">type:</span> <span class="YAML_SCALAR_VALUE">&gt; some_type_here</span>
+    </pre>
+</code>
+<br />
+<br />
+
+CSS
+
+<code class="TEXT">
+    <pre class="TEXT">
+<span class="CSS_KEYWORD">@import</span> <span class="CSS_STRING">"manual.css"</span>;
+<span class="CSS_TAG_NAME">h1</span>.<span class="CSS_IDENT">mystyle</span> {
+  <span class="CSS_PROPERTY_NAME">color</span>:<span class="CSS_PROPERTY_VALUE">blue</span>; <span class="CSS_COMMENT">/* TODO: change THIS to yellow for next version! */</span>
+  <span class="CSS_PROPERTY_NAME">font-size</span>: <span class="CSS_NUMBER">15</span><span class="CSS_PROPERTY_VALUE">pt</span>;
+  <span class="CSS_PROPERTY_NAME">border</span>:<span class="CSS_FUNCTION">rgb</span>(<span class="CSS_NUMBER">255</span>,<span class="CSS_NUMBER">0</span>,<span class="CSS_NUMBER">0</span>);
+  <span class="CSS_PROPERTY_NAME">background</span>:<span class="CSS_FUNCTION">url</span>(<span class="CSS_URL">hello.jpg</span>);
 }
     </pre>
 </code>
+<br />
+<br />
+
+JAVASCRIPT
+
+<code class="TEXT">
+    <pre class="TEXT">
+<span class="JS_KEYWORD">var</span> <span class="JS_GLOBAL_VARIABLE">globalVar</span><span class="JS_SEMICOLON">;</span>
+<span class="JS_DOC_COMMENT">/**
+ * Constructor for </span><span class="JS_DOC_MARKUP">&lt;code&gt;</span><span class="JS_DOC_COMMENT">AjaxRequest</span><span class="JS_DOC_MARKUP">&lt;/code&gt;</span> <span class="JS_DOC_COMMENT">class
+ * </span><span class="JS_DOC_TAG">@param</span> <span class="JS_DOC_COMMENT">url the url for the request</span><span class="JS_DOC_MARKUP">&lt;p/&gt;</span>
+ <span class="JS_DOC_COMMENT">*/</span>
+<span class="JS_KEYWORD">function</span> <span class="JS_GLOBAL_FUNCTION">AjaxRequest</span><span class="JS_PARENTHS">(</span><span class="JS_PARAMETER">url</span><span class="JS_PARENTHS">)</span> <span class="JS_BRACES">{</span>
+  <span class="JS_KEYWORD">var</span> <span class="JS_LOCAL_VARIABLE">urls</span> <span class="JS_OPERATION_SIGN">=</span> <span class="JS_BRACKETS">[</span> <span class="JS_STRING">"www.cnn.com"</span><span class="JS_COMMA">,</span> <span class="JS_NUMBER">5</span><span class="JS_COMMA">,</span> <span class="JS_GLOBAL_VARIABLE">globalVar</span><span class="JS_BRACKETS">]</span><span class="JS_SEMICOLON">;</span>
+  <span class="JS_KEYWORD">this</span><span class="JS_DOT">.</span><span class="JS_INSTANCE_MEMBER_VARIABLE">request</span> <span class="JS_OPERATION_SIGN">=</span> <span class="JS_KEYWORD">new</span> <span class="JS_GLOBAL_FUNCTION">XMLHttpRequest</span><span class="JS_PARENTHS">()</span><span class="JS_SEMICOLON">;</span>
+  <span class="JS_PARAMETER">url</span> <span class="JS_OPERATION_SIGN">=</span> <span class="JS_PARAMETER">url</span><span class="JS_DOT">.</span>replace<span class="JS_PARENTHS">(</span><span class="JS_REGEXP">/^\s*(.*)/</span><span class="JS_COMMA">,</span> <span class="JS_STRING">"$1"</span><span class="JS_PARENTHS">)</span><span class="JS_SEMICOLON">;</span> <span class="JS_LINE_COMMENT">// skip leading whitespace</span>
+  <span class="JS_BLOCK_COMMENT">/* check the url to be in urls */</span>
+  <span class="JS_KEYWORD">var</span> <span class="JS_LOCAL_VARIABLE">a</span> <span class="JS_OPERATION_SIGN">=</span> <span class="JS_STRING">"</span><span class="JS_VALID_STRING_ESCAPE">\u1111</span><span class="JS_INVALID_STRING_ESCAPE">\z</span><span class="JS_VALID_STRING_ESCAPE">\n</span><span class="JS_INVALID_STRING_ESCAPE">\u11</span><span class="JS_STRING">"</span><span class="JS_SEMICOLON">;</span>
+  <span class="JS_KEYWORD">this</span><span class="JS_DOT">.</span><span class="JS_INSTANCE_MEMBER_FUNCTION">foo</span> <span class="JS_OPERATION_SIGN">=</span> <span class="JS_KEYWORD">new function</span><span class="JS_PARENTHS">()</span> <span class="JS_BRACES">{}</span><span class="JS_SEMICOLON">;</span>
+  <span class="JS_INSTANCE_MEMBER_FUNCTION">foo</span><span class="JS_PARENTHS">()</span><span class="JS_SEMICOLON">;</span>
+  <span class="JS_BADCHARACTER">#</span>
+<span class="JS_BRACES">}</span>
+    </pre>
+</code>
+<br />
+<br />
+
+SASS
+
+<code class="TEXT">
+    <pre class="TEXT">
+<span class="SASS_COMMENT">/* Some loud comment here */
+// And silent one</span>
+
+<span class="SASS_CONSTANT">!number</span> = <span class="SASS_NUMBER">123</span>
+<span class="SASS_DIRECTIVE">@import</span> foo + <span class="SASS_CONSTANT">!number</span> + <span class="SASS_STRING">".css"</span>
+<span class="SASS_MIXIN">=large-text</span>
+  <span class="SASS_ATTRIBUTE">:font</span>
+     <span class="SASS_ATTRIBUTE">:family</span> Arial
+     <span class="SASS_ATTRIBUTE">:size</span> <span class="SASS_NUMBER">20</span>px
+     <span class="SASS_ATTRIBUTE">:weight</span> bold
+  <span class="SASS_ATTRIBUTE">:color</span> #ff0000
+
+<span class="SASS_RULE">#main</span> p
+  <span class="SASS_MIXIN">+large-text</span>
+    <span class="SASS_ATTRIBUTE">color:</span> #00ddcc
+    <span class="SASS_ATTRIBUTE">:width</span> <span class="SASS_NUMBER">97</span>%
+    </pre>
+</code>
+<br />
+<br />
 </body>
 </html>
