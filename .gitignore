@@ -1,0 +1,25 @@
+/templates/static/underline (copy).gif
+/templates/static/ffffff.png
+/templates/static/FFFFFF.png
+/templates/static/ffff00.png
+/templates/static/0000ff.png
+/templates/static/008000.png
+/templates/static/00FF00.png
+/templates/static/00ff00.png
+/templates/static/00FFFF.png
+/templates/static/00ffff.png
+/templates/static/ff0000.png
+/tictactoe/admin.pyc
+/tictactoe/__init__.pyc
+/tictactoe/models.pyc
+/tictactoe/urls.pyc
+/tictactoe/views.pyc
+/.idea/workspace.xml
+/jetbrainschemes/__init__.pyc
+/jetbrainschemes/models.pyc
+/jetbrainschemes/tests.pyc
+/jetbrainschemes/views.pyc
+/jetbrainschemes/XmlToCss.pyc
+/manage.pyc
+/polls/urls.pyc
+/polls/views.pyc
