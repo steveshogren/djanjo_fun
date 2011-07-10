@@ -10,7 +10,7 @@ class CssSettings(models.Model):
         return self.file_name
 
 class XmlToPersistence():
-    def convert(self, file_name='coolblue.xml'):
+    def convert(self, file_name='twilightest.xml'):
         c, created = CssSettings.objects.get_or_create(file_name=file_name)
         
         xmlToCss = XmlToCss()

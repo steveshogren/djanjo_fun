@@ -3,44 +3,101 @@
         "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-    <title>JetBrains Color Schemes</title>
+    <title>PyCharm Color Schemes</title>
     <style TYPE="text/css">
         {{ colors }}
+        li.bg, .bg {
+	clear:both;
+	padding:0;
+	margin:10px 0;
+	height:5px;
+	background:url({{ mediaurl }}images/bg_img.gif);
+	list-style:none;
+}
+    .right li a {
+	background:url({{ mediaurl }}images/ul_li.gif) left no-repeat;
+	padding:0 0 0 15px;
+	margin:0;
+	font:bold 16px Arial, Helvetica, sans-serif;
+	color:#73ab00;
+	text-decoration:none;
+}
+        .search span {
+	display:block;
+	float:left;
+	background:url({{ mediaurl }}images/search_bg.gif) left top no-repeat;
+	width:153px;
+	padding:0 5px;
+}
+
+        .right li.sponsors a {
+	background:url({{ mediaurl }}images/ul_li.gif) left no-repeat;
+	padding:0 0 0 15px;
+	margin:0;
+	font:normal 14px Arial, Helvetica, sans-serif;
+	color:#73ab00;
+	text-decoration:none;
+}
+        .header {
+	background:url({{ mediaurl }}images/header_bg.gif) top repeat-x;
+	margin:0;
+	padding:0;
+}
+        .wrt {
+            margin: 5px;
+            padding: 5px;
+        }
     </style>
+    <link href="{{ mediaurl }}/style.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
+<div class="main">
+  <div class="header">
+    <div class="header_resize">
+      <div class="logo">
+        <h1><a href="index.html"><small>Your styles. Your way.</small>PyCharm<span>Styles</span></a></h1>
+      </div>
 
-PHP
-
+      <div class="clr"></div>
+      <div class="menu">
+        <ul>
+          <li><a href="index.html" class="active"><span>Home</span></a></li>
+          <li><a href="services.html"><span>Import</span></a></li>
+        </ul>
+      </div>
+      <div class="clr"></div>
+    </div>
+    <div class="headert_text_resize">
+      <div class="clr"></div>
+    </div>
+  </div>
+  <div class="body">
+    <div class="body_resize">
+      <div class="left">
+        <h2>Cool Blue</h2>
+        <p>PYTHON</p>
+    <pre class="TEXT">
 <code class="TEXT">
-    <pre class="PHP_SCRIPTING_BACKGROUND">
-<span class="PHP_TAG">&lt;?php</span>
-<span class="PHP_VAR">$heredoc</span> <span class="PHP_OPERATION_SIGN">=</span> <span class="PHP_HEREDOC_ID"><<< HEREDOC_ID</span>
-<span class="PHP_HEREDOC_CONTENT">some</span> <span class="PHP_VAR">$contents</span>
-<span class="PHP_HEREDOC_ID">HEREDOC_ID</span><span class="PHP_SEMICOLON">;</span>
+<span class="PY_OPERATION_SIGN">@</span><span class="PY_DECORATOR">decorator</span><span class="PY_PARENTHS">(</span>param<span class="PY_OPERATION_SIGN">=</span><span class="PY_NUMBER">1</span><span class="PY_PARENTHS">)</span>
+<span class="PY_KEYWORD">def</span> f<span class="PY_PARENTHS">(</span>x<span class="PY_PARENTHS">)</span><span class="PY_OPERATION_SIGN">:</span>
+    <span class="PY_DOC_COMMENT">""" Syntax Highlighting Demo """</span>
+    s <span class="PY_OPERATION_SIGN">=</span> <span class="PY_PARENTHS">(</span><span class="PY_STRING">"Test"</span><span class="PY_COMMA">,</span> <span class="PY_NUMBER">2</span><span class="PY_OPERATION_SIGN">+</span><span class="PY_NUMBER">3</span><span class="PY_COMMA">,</span> <span class="PY_BRACES">{</span><span class="PY_STRING">'a'</span><span class="PY_OPERATION_SIGN">:</span> <span class="PY_STRING">'b'</span><span class="PY_BRACES">}</span><span class="PY_COMMA">,</span> x<span class="PY_PARENTHS">)</span>   <span class="PY_LINE_COMMENT"># Comment</span>
+    <span class="PY_KEYWORD">print</span> s<span class="PY_BRACKETS">[</span><span class="PY_NUMBER">0</span><span class="PY_BRACKETS">]</span><span class="PY_DOT">.</span>lower<span class="PY_PARENTHS">()</span>
 
-<span class="PHP_COMMENT">// Sample comment</span>
-        
-<span class="PHP_KEYWORD">class</span> <span class="PHP_IDENTIFIER">SomeClass</span> <span class="PHP_BRACKETS">{</span>
-   <span class="PHP_DOC_COMMENT_ID">/**
-    * Description by &lt;a href="mailto:">alex&lt;/a>
-    * <span class="PHP_DOC_TAG">@return</span> SomeType
-    */</span>
-    <span class="PHP_KEYWORD">function</span> <span class="PHP_IDENTIFIER">doSmth</span><span class="PHP_BRACKETS">(</span><span class="PHP_VAR">$abc</span><span class="PHP_COMMA">,</span> <span class="PHP_VAR">$def</span><span class="PHP_BRACKETS">)</span> <span class="PHP_BRACKETS">{</span>
-        <span class="PHP_VAR">$v</span> <span class="PHP_OPERATION_SIGN">=</span> <span class="PHP_IDENTIFIER">Helper</span><span class="PHP_OPERATION_SIGN">::</span><span class="PHP_IDENTIFIER">convert</span><span class="PHP_BRACKETS">(</span><span class="PHP_VAR">$abc</span> <span class="PHP_OPERATION_SIGN">.</span> <span class="PHP_STRING">"</span>\n <span class="PHP_BRACKETS">{</span><span class="PHP_VAR">$def</span><span class="PHP_BRACKETS">}</span><span class="PHP_STRING">"</span><span class="PHP_BRACKETS">)</span><span class="PHP_SEMICOLON">;</span>
-        <span class="PHP_VAR">$q</span> <span class="PHP_OPERATION_SIGN">=</span> <span class="PHP_KEYWORD">new</span> <span class="PHP_IDENTIFIER">Query</span><span class="PHP_BRACKETS">(</span> <span class="PHP_VAR">$this</span><span class="PHP_OPERATION_SIGN">-></span><span class="PHP_IDENTIFIER">invent</span><span class="PHP_BRACKETS">(</span><span class="PHP_PREDEFINED_SYMBOL">abs</span><span class="PHP_BRACKETS">(</span><span class="PHP_NUMBER">0x80</span><span class="PHP_BRACKETS">)</span><span class="PHP_BRACKETS">)</span> <span class="PHP_BRACKETS">)</span><span class="PHP_SEMICOLON">;</span>
-        <span class="PHP_KEYWORD">return array</span><span class="PHP_BRACKETS">(</span><span class="PHP_VAR">$v</span> <span class="PHP_OPERATION_SIGN">=></span> <span class="PHP_VAR">$q</span><span class="PHP_OPERATION_SIGN">-></span><span class="PHP_IDENTIFIER">result</span><span class="PHP_BRACKETS">)</span><span class="PHP_SEMICOLON">;</span>
-    <span class="PHP_BRACKETS">}</span>
-<span class="PHP_BRACKETS">}</span>
+<span class="PY_KEYWORD">class</span> <span class="PY_CLASS_DEFINITION">Foo</span><span class="PY_OPERATION_SIGN">:</span>
+    <span class="PY_KEYWORD">def</span> <span class="PY_PREDEFINED_DEFINITION">__init__</span><span class="PY_PARENTHS">(</span>self<span class="PY_PARENTHS">)</span><span class="PY_OPERATION_SIGN">:</span>
+        self<span class="PY_DOT">.</span>sense <span class="PY_OPERATION_SIGN">=</span> None
+        byte_string <span class="PY_OPERATION_SIGN">=</span> <span class="PY_STRING">'newline:</span><span class="PY_VALID_STRING_ESCAPE">\n</span><span class="PY_STRING"> also newline:</span><span class="PY_VALID_STRING_ESCAPE">\x0a</span><span class="PY_STRING">'</span>
+        text_string <span class="PY_OPERATION_SIGN">=</span> <span class="PY_STRING">u"Cyrillic A is </span><span class="PY_VALID_STRING_ESCAPE">\u0410</span><span class="PY_STRING">. Oops: </span><span class="PY_INVALID_STRING_ESCAPE">\u123g</span><span class="PY_STRING">"</span>
 
-<span class="PHP_KEYWORD">include</span> <span class="PHP_BRACKETS">(</span><span class="PHP_PREDEFINED_SYMBOL">dirname</span><span class="PHP_BRACKETS">(</span><span class="PHP_IDENTIFIER">__FILE__</span><span class="PHP_BRACKETS">)</span> <span class="PHP_OPERATION_SIGN">.</span> <span class="PHP_STRING">"inc.php"</span><span class="PHP_BRACKETS">)</span><span class="PHP_SEMICOLON">;</span>
-<span class="PHP_EXEC_COMMAND_ID">`rm -r`</span><span class="PHP_SEMICOLON">;</span>
-\
-</pre>
+    <span class="PY_KEYWORD">def</span> <span class="PY_FUNC_DEFINITION">makeSense</span><span class="PY_PARENTHS">(</span>self<span class="PY_COMMA">,</span> whatever<span class="PY_PARENTHS">)</span><span class="PY_OPERATION_SIGN">:</span>
+        self<span class="PY_DOT">.</span>sense <span class="PY_OPERATION_SIGN">=</span> whatever
+
+x <span class="PY_OPERATION_SIGN">=</span> <span class="PY_BUILTIN_NAME">len</span><span class="PY_PARENTHS">(</span><span class="PY_STRING">'abc'</span><span class="PY_PARENTHS">)</span>
+<span class="PY_KEYWORD">print</span><span class="PY_PARENTHS">(</span>f<span class="PY_DOT">.</span><span class="PY_PREDEFINED_USAGE">__doc__</span><span class="PY_PARENTHS">)</span>
 </code>
-<br />
-<br />
-
+        </pre>
+<p>
 XML
 
 <code class="TEXT">
@@ -58,9 +115,8 @@ XML
 <span class="XML_TAG">&lt;/</span><span class="XML_TAG_NAME">index</span><span class="XML_TAG">&gt;</span>
     </pre>
 </code>
-<br />
-<br />
-
+    </p>
+<p>
 HTML
 
 <code class="TEXT">
@@ -81,35 +137,8 @@ What is PyCharm? <span class="HTML_ENTITY_REFERENCE">&amp;#x00B7; &amp;Alpha; </
 <span class="HTML_TAG">&lt;/</span><span class="HTML_TAG_NAME">html</span><span class="HTML_TAG">&gt;</span>
     </pre>
 </code>
-<br />
-<br />
-
-PYTHON
-
-<code class="TEXT">
-    <pre class="TEXT">
-<span class="PY_OPERATION_SIGN">@</span><span class="PY_DECORATOR">decorator</span><span class="PY_PARENTHS">(</span>param<span class="PY_OPERATION_SIGN">=</span><span class="PY_NUMBER">1</span><span class="PY_PARENTHS">)</span>
-<span class="PY_KEYWORD">def</span> f<span class="PY_PARENTHS">(</span>x<span class="PY_PARENTHS">)</span><span class="PY_OPERATION_SIGN">:</span>
-    <span class="PY_DOC_COMMENT">""" Syntax Highlighting Demo """</span>
-    s <span class="PY_OPERATION_SIGN">=</span> <span class="PY_PARENTHS">(</span><span class="PY_STRING">"Test"</span><span class="PY_COMMA">,</span> <span class="PY_NUMBER">2</span><span class="PY_OPERATION_SIGN">+</span><span class="PY_NUMBER">3</span><span class="PY_COMMA">,</span> <span class="PY_BRACES">{</span><span class="PY_STRING">'a'</span><span class="PY_OPERATION_SIGN">:</span> <span class="PY_STRING">'b'</span><span class="PY_BRACES">}</span><span class="PY_COMMA">,</span> x<span class="PY_PARENTHS">)</span>   <span class="PY_LINE_COMMENT"># Comment</span>
-    <span class="PY_KEYWORD">print</span> s<span class="PY_BRACKETS">[</span><span class="PY_NUMBER">0</span><span class="PY_BRACKETS">]</span><span class="PY_DOT">.</span>lower<span class="PY_PARENTHS">()</span>
-
-<span class="PY_KEYWORD">class</span> <span class="PY_CLASS_DEFINITION">Foo</span><span class="PY_OPERATION_SIGN">:</span>
-    <span class="PY_KEYWORD">def</span> <span class="PY_PREDEFINED_DEFINITION">__init__</span><span class="PY_PARENTHS">(</span>self<span class="PY_PARENTHS">)</span><span class="PY_OPERATION_SIGN">:</span>
-        self<span class="PY_DOT">.</span>sense <span class="PY_OPERATION_SIGN">=</span> None
-        byte_string <span class="PY_OPERATION_SIGN">=</span> <span class="PY_STRING">'newline:</span><span class="PY_VALID_STRING_ESCAPE">\n</span><span class="PY_STRING"> also newline:</span><span class="PY_VALID_STRING_ESCAPE">\x0a</span><span class="PY_STRING">'</span>
-        text_string <span class="PY_OPERATION_SIGN">=</span> <span class="PY_STRING">u"Cyrillic A is </span><span class="PY_VALID_STRING_ESCAPE">\u0410</span><span class="PY_STRING">. Oops: </span><span class="PY_INVALID_STRING_ESCAPE">\u123g</span><span class="PY_STRING">"</span>
-
-    <span class="PY_KEYWORD">def</span> <span class="PY_FUNC_DEFINITION">makeSense</span><span class="PY_PARENTHS">(</span>self<span class="PY_COMMA">,</span> whatever<span class="PY_PARENTHS">)</span><span class="PY_OPERATION_SIGN">:</span>
-        self<span class="PY_DOT">.</span>sense <span class="PY_OPERATION_SIGN">=</span> whatever
-
-x <span class="PY_OPERATION_SIGN">=</span> <span class="PY_BUILTIN_NAME">len</span><span class="PY_PARENTHS">(</span><span class="PY_STRING">'abc'</span><span class="PY_PARENTHS">)</span>
-<span class="PY_KEYWORD">print</span><span class="PY_PARENTHS">(</span>f<span class="PY_DOT">.</span><span class="PY_PREDEFINED_USAGE">__doc__</span><span class="PY_PARENTHS">)</span>
-    </pre>
-</code>
-<br />
-<br />
-
+    </p>
+<p>
 DJANGO
 
 <code class="TEXT">
@@ -124,8 +153,8 @@ DJANGO
 <span class="DJANGO_TAG_START_END">&#123;%</span> <span class="DJANGO_TAG_NAME">endfilter</span> <span class="DJANGO_TAG_START_END">%}</span>
     </pre>
 </code>
-<br />
-<br />
+            </p>
+<p>
 
 GQL
 
@@ -138,8 +167,8 @@ GQL
     <span class="GQL_KEYWORD">OFFSET</span> <span class="GQL_INT_LITERAL">10</span>
     </pre>
 </code>
-<br />
-<br />
+            </p>
+<p>
 
 YAML
 
@@ -160,8 +189,8 @@ YAML
   <span class="YAML_SCALAR_KEY">type:</span> <span class="YAML_SCALAR_VALUE">&gt; some_type_here</span>
     </pre>
 </code>
-<br />
-<br />
+            </p>
+<p>
 
 CSS
 
@@ -176,8 +205,8 @@ CSS
 }
     </pre>
 </code>
-<br />
-<br />
+            </p>
+<p>
 
 JAVASCRIPT
 
@@ -200,8 +229,8 @@ JAVASCRIPT
 <span class="JS_BRACES">}</span>
     </pre>
 </code>
-<br />
-<br />
+            </p>
+<p>
 
 SASS
 
@@ -225,7 +254,52 @@ SASS
     <span class="SASS_ATTRIBUTE">:width</span> <span class="SASS_NUMBER">97</span>%
     </pre>
 </code>
-<br />
-<br />
+</p>
+        <div class="clr"></div>
+        <h2>&nbsp;</h2>
+      </div>
+      <div class="clr"></div>
+    </div>
+  </div>
+  <div class="footer">
+    <div class="footer_resize">
+      <p class="rf">Layout by Hot <a href="http://www.hotwebsitetemplates.net/">Website Templates</a></p>
+      <div class="clr"></div>
+    </div>
+    <div class="clr"></div>
+  </div>
+</div>
+{#PHP#}
+{##}
+{#<code class="TEXT">#}
+{#    <pre class="PHP_SCRIPTING_BACKGROUND">#}
+{#<span class="PHP_TAG">&lt;?php</span>#}
+{#<span class="PHP_VAR">$heredoc</span> <span class="PHP_OPERATION_SIGN">=</span> <span class="PHP_HEREDOC_ID"><<< HEREDOC_ID</span>#}
+{#<span class="PHP_HEREDOC_CONTENT">some</span> <span class="PHP_VAR">$contents</span>#}
+{#<span class="PHP_HEREDOC_ID">HEREDOC_ID</span><span class="PHP_SEMICOLON">;</span>#}
+{##}
+{#<span class="PHP_COMMENT">// Sample comment</span>#}
+{#        #}
+{#<span class="PHP_KEYWORD">class</span> <span class="PHP_IDENTIFIER">SomeClass</span> <span class="PHP_BRACKETS">{</span>#}
+{#   <span class="PHP_DOC_COMMENT_ID">/**#}
+{#    * Description by &lt;a href="mailto:">alex&lt;/a>#}
+{#    * <span class="PHP_DOC_TAG">@return</span> SomeType#}
+{#    */</span>#}
+{#    <span class="PHP_KEYWORD">function</span> <span class="PHP_IDENTIFIER">doSmth</span><span class="PHP_BRACKETS">(</span><span class="PHP_VAR">$abc</span><span class="PHP_COMMA">,</span> <span class="PHP_VAR">$def</span><span class="PHP_BRACKETS">)</span> <span class="PHP_BRACKETS">{</span>#}
+{#        <span class="PHP_VAR">$v</span> <span class="PHP_OPERATION_SIGN">=</span> <span class="PHP_IDENTIFIER">Helper</span><span class="PHP_OPERATION_SIGN">::</span><span class="PHP_IDENTIFIER">convert</span><span class="PHP_BRACKETS">(</span><span class="PHP_VAR">$abc</span> <span class="PHP_OPERATION_SIGN">.</span> <span class="PHP_STRING">"</span>\n <span class="PHP_BRACKETS">{</span><span class="PHP_VAR">$def</span><span class="PHP_BRACKETS">}</span><span class="PHP_STRING">"</span><span class="PHP_BRACKETS">)</span><span class="PHP_SEMICOLON">;</span>#}
+{#        <span class="PHP_VAR">$q</span> <span class="PHP_OPERATION_SIGN">=</span> <span class="PHP_KEYWORD">new</span> <span class="PHP_IDENTIFIER">Query</span><span class="PHP_BRACKETS">(</span> <span class="PHP_VAR">$this</span><span class="PHP_OPERATION_SIGN">-></span><span class="PHP_IDENTIFIER">invent</span><span class="PHP_BRACKETS">(</span><span class="PHP_PREDEFINED_SYMBOL">abs</span><span class="PHP_BRACKETS">(</span><span class="PHP_NUMBER">0x80</span><span class="PHP_BRACKETS">)</span><span class="PHP_BRACKETS">)</span> <span class="PHP_BRACKETS">)</span><span class="PHP_SEMICOLON">;</span>#}
+{#        <span class="PHP_KEYWORD">return array</span><span class="PHP_BRACKETS">(</span><span class="PHP_VAR">$v</span> <span class="PHP_OPERATION_SIGN">=></span> <span class="PHP_VAR">$q</span><span class="PHP_OPERATION_SIGN">-></span><span class="PHP_IDENTIFIER">result</span><span class="PHP_BRACKETS">)</span><span class="PHP_SEMICOLON">;</span>#}
+{#    <span class="PHP_BRACKETS">}</span>#}
+{#<span class="PHP_BRACKETS">}</span>#}
+{##}
+{#<span class="PHP_KEYWORD">include</span> <span class="PHP_BRACKETS">(</span><span class="PHP_PREDEFINED_SYMBOL">dirname</span><span class="PHP_BRACKETS">(</span><span class="PHP_IDENTIFIER">__FILE__</span><span class="PHP_BRACKETS">)</span> <span class="PHP_OPERATION_SIGN">.</span> <span class="PHP_STRING">"inc.php"</span><span class="PHP_BRACKETS">)</span><span class="PHP_SEMICOLON">;</span>#}
+{#<span class="PHP_EXEC_COMMAND_ID">`rm -r`</span><span class="PHP_SEMICOLON">;</span>#}
+{#\#}
+{#</pre>#}
+{#</code>#}
+{#<br />#}
+{#<br />#}
+
+
 </body>
 </html>
