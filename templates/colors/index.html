@@ -74,8 +74,12 @@
   <div class="body">
     <div class="body_resize">
       <div class="left">
-        <h2>Cool Blue</h2>
-        <p>PYTHON</p>
+          <form action="/colors/" method="post">{% csrf_token %}
+              {{ selector.dropdown }}
+              <input type="submit" value="Gogogo!" />
+          </form>
+          <h2>{{ color_schemes }}</h2>
+          <p>PYTHON</p>
     <pre class="TEXT">
 <code class="TEXT">
 <span class="PY_OPERATION_SIGN">@</span><span class="PY_DECORATOR">decorator</span><span class="PY_PARENTHS">(</span>param<span class="PY_OPERATION_SIGN">=</span><span class="PY_NUMBER">1</span><span class="PY_PARENTHS">)</span>
